@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About Me - Favre Emma</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <style>
+            body {
+                background-color: #fff !important;
+            }
+
+            /* --- Styles Communs Modaux --- */
+            .modal-content {
+                background: #fff;
+                padding: 40px;
+                border-radius: 15px;
+                position: relative;
+                box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+                margin: 5% auto;
+                font-family: inherit; 
+            }
+
+            .modal-subtitle {
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                color: #888;
+                font-size: 0.8rem;
+                margin-bottom: 10px;
+                display: block;
+            }
+
+            .modal-title {
+                margin-bottom: 25px;
+                font-weight: 700;
+                color: #1a1a1a;
+            }
+
+            /* --- Grid Certificats --- */
+            .cert-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
+            }
+
+            .cert-card {
+                display: flex;
+                align-items: center;
+                padding: 20px;
+                background: #fdfdfd;
+                border: 1px solid #eee;
+                border-radius: 12px;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .cert-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+                border-color: #ddd;
+            }
+
+            .cert-icon {
+                font-size: 1.8rem;
+                margin-right: 20px;
+                color: #333;
+                width: 40px;
+                text-align: center;
+            }
+
+            .cert-info h4 { margin: 0 0 5px 0; font-size: 1rem; color: #222; font-family: inherit;}
+            .cert-info p { margin: 0 0 10px 0; font-size: 0.85rem; color: #777; font-family: inherit;}
+            
+            .cert-link {
+                font-size: 0.7rem;
+                text-decoration: none;
+                color: #007bff;
+                font-weight: bold;
+                text-transform: uppercase;
+                font-family: inherit;
+            }
+
+            /* --- Badges Expériences --- */
+            .exp-badge-container {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                justify-content: center;
+                margin-top: 20px;
+            }
+
+            .exp-badge {
+                background: #f8f9fa;
+                border: 1px solid #e9ecef;
+                padding: 8px 18px;
+                border-radius: 50px;
+                font-size: 0.85rem;
+                color: #444;
+                transition: all 0.3s ease;
+                font-family: inherit; 
+            }
+
+            .exp-badge:hover {
+                background: #333;
+                color: #fff;
+                transform: translateY(-2px);
+            }
+
+            .separator {
+                display: flex;
+                align-items: center;
+                text-transform: uppercase;
+                font-size: 0.75rem;
+                font-weight: 600;
+                color: #999;
+                margin: 30px 0 15px;
+                font-family: inherit; 
+            }
+
+            .separator::before, .separator::after {
+                content: "";
+                flex: 1;
+                height: 1px;
+                background: #eee;
+            }
+            .separator::before { margin-right: 15px; }
+            .separator::after { margin-left: 15px; }
+        </style>
+    </head>
+<body>
+
+    <div class="sidebar left-sidebar">
+        <div class="sidebar-nav">
+            <a href="index.html" class="nav-link">HOME</a>
+        </div>
+    </div>
+
+    <div class="sidebar right-sidebar">
+        <div class="sidebar-nav">
+            <a href="contact.html" class="nav-link">CONTACT</a>
+            <a href="about-me.html" class="nav-link">ABOUT ME</a>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <section class="intro-text about-me-text-container">
+            <h1 class="about-me-title">GET TO KNOW ME</h1>
+            <p>
+                I am a Junior Data Analyst driven by two core passions: data and languages. I discovered the field of analytics during the first year of my Master’s degree, and it immediately clicked. I realized that data, much like a language, tells a story if you know how to interpret it.
+            </p>
+            <p>
+                I thrive in fast-paced, multicultural settings and possess a strong appetite for learning. My approach is defined by curiosity and continuous improvement, always seeking to refine my technical stack—from SQL and R to data visualization—and contribute effectively to global teams. I am now eager to bring this blend of analytical rigor and cultural adaptability to new international challenges.
+            </p>
+            
+            <div class="document-buttons-container">
+                <div class="document-button" id="toggle-cv">VIEW MY CV</div>
+                <div class="document-button" id="toggle-cover-letter">VIEW MY COVER LETTER</div>
+            </div>
+
+            <div class="document-buttons-container" style="margin-top: 20px;">
+                <div class="document-button" id="toggle-certificates">VIEW CERTIFICATES</div>
+                <div class="document-button" id="toggle-experiences">EXPERIENCES</div>
+            </div>
+        </section>
+    </main>
+
+    <div class="copyright">
+        <span>© 2025 Favre Emma's Portfolio</span>
+    </div>
+
+    <div id="cv-modal" class="modal">
+        <div class="modal-content large-modal">
+            <span class="close-button">&times;</span>
+            <embed src="assets/CV_Favre_Emma.pdf" type="application/pdf" width="100%" height="100%">
+        </div>
+    </div>
+
+    <div id="cover-letter-modal" class="modal">
+        <div class="modal-content large-modal">
+            <span class="close-button">&times;</span>
+            <embed src="assets/cover_letter.pdf" type="application/pdf" width="100%" height="100%">
+        </div>
+    </div>
+
+    <div id="certificates-modal" class="modal">
+        <div class="modal-content" style="max-width: 850px;">
+            <span class="close-button">&times;</span>
+            <span class="modal-subtitle">Technical Validations</span>
+            <h2 class="modal-title">Professional Certifications</h2>
+
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <div class="cert-icon"><i class="fas fa-chart-bar"></i></div>
+                    <div class="cert-info">
+                        <h4>Google Data Analytics</h4>
+                        <p>Google / Coursera</p>
+                        <a href="https://www.credly.com/badges/39c1042d-2c14-4515-90c7-cbc25e7dd420/linked_in_profile" target="_blank" class="cert-link">Verify Credential</a>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon"><i class="fas fa-signal"></i></div>
+                    <div class="cert-info">
+                        <h4>Power BI Data Analyst</h4>
+                        <p>Microsoft Professional</p>
+                        <a href="#" target="_blank" class="cert-link">Verify Credential</a>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon"><i class="fas fa-table"></i></div>
+                    <div class="cert-info">
+                        <h4>Excel Skills for Business</h4>
+                        <p>Macquarie University</p>
+                        <a href="https://www.coursera.org/account/accomplishments/specialization/M859N2PY9HJC" target="_blank" class="cert-link">Verify Credential</a>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon"><i class="fas fa-gem"></i></div>
+                    <div class="cert-info">
+                        <h4>InsideLVMH Certificate</h4>
+                        <p>LVMH Group</p>
+                        <a href="assets/Inside_LVMH_Certificate.pdf" target="_blank" class="cert-link">Verify Certificate</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="experiences-modal" class="modal">
+        <div class="modal-content" style="max-width: 650px;">
+            <span class="close-button">&times;</span>
+            <span class="modal-subtitle">Complementary Experiences</span>
+            <h2 class="modal-title">Event Hosting Experience</h2>
+            
+            <p style="line-height: 1.7; color: #555; font-size: 0.95rem; font-family: inherit;"> 
+                Alongside my studies, I have completed several assignments as a hostess for prestigious brands. These roles demonstrated my ability to adapt to fast-paced environments, work effectively in teams, and maintain high standards of professional communication.
+            </p>
+            
+            <div class="separator">Key Collaborations</div>
+
+            <div class="exp-badge-container">
+                <span class="exp-badge">Renault</span>
+                <span class="exp-badge">BYD</span>
+                <span class="exp-badge">Hermès</span>
+                <span class="exp-badge">Bolloré</span>
+                <span class="exp-badge">Galeries Lafayette</span>
+                <span class="exp-badge">Congrès des Maires</span>
+                <span class="exp-badge">Puig x Rizzoli</span>
+                <span class="exp-badge">Campus Cyber</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="about-me.js"></script>
+</body>
+</html>

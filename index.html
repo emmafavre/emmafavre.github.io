@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favre Emma's portoflio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap">
+</head>
+<body>
+
+    <div class="sidebar left-sidebar">
+        <div class="sidebar-nav">
+            <a href="index.html" class="nav-link">HOME</a>
+        </div>
+    </div>
+
+    <div class="sidebar right-sidebar">
+        <div class="sidebar-nav">
+            <a href="contact.html" class="nav-link">CONTACT</a>
+            <a href="about-me.html" class="nav-link">ABOUT ME</a>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <section class="intro-text">
+            <p>
+                Hello, I'm Favre Emma. As a Junior Data Analyst, I use my skills in data visualization and reporting to transform complex data into actionable insights. Here you can discover my projects where I explore data to solve real-world business challenges.
+            </p>
+            <p>
+                Feel free to navigate through my portfolio — you can click on the sections to learn more about my projects, skills (soft, technical & others), my contacts, and more about me.
+            </p>
+        </section>
+
+        <h1 class="projects-title view-projects-title">MY LAST PROJECTS</h1>
+        
+        <section id="projects-section" class="projects-grid">
+            <a href="project1.html" class="project-folder">
+                <img src="images/dossier.png" alt="Dossier de projet" class="folder-icon">
+                <p class="project-title-text">Project 1: Insurance Fraud Detection (M1) </p>
+            </a>
+            <a href="project2.html" class="project-folder">
+                <img src="images/dossier.png" alt="Dossier de projet" class="folder-icon">
+                <p class="project-title-text">Project 2: Google Data Analytics Capstone </p>
+            </a>
+            <a href="project3.html" class="project-folder">
+                <img src="images/dossier.png" alt="Dossier de projet" class="folder-icon">
+                <p class="project-title-text">Project 3: iFood Data Analysis case </p>
+            </a>
+        </section>
+
+        <h1 class="projects-title skills-title">SKILLS</h1>
+        <p class="kawaii-note">
+            <i class="fas fa-star star-icon"></i>
+            Click on the skills you're interested in knowing
+        </p>
+        
+        <div class="pudding-flex-container">
+            
+            <div class="left-labels-container">
+                <div class="pudding-label-container label-left">
+                    <span class="pudding-line"></span>
+                    <a href="#" id="toggle-soft-skills">SOFT SKILLS</a>
+                </div>
+                <div class="pudding-label-container label-left-bottom">
+                    <a href="#" id="toggle-other-skills">OTHER SKILLS</a>
+                    <span class="pudding-line"></span>
+                </div>
+            </div>
+            
+            <div class="pudding-image-wrapper">
+                <img src="images/pudding-5.png" alt="Dessin de pudding" class="pudding-image">
+            </div>
+            
+            <div class="pudding-label-container label-right">
+                <a href="skills-analytics.html">DATA ANALYTICS SKILLS</a>
+                <span class="pudding-line"></span>
+            </div>
+            
+        </div>
+
+    </main>
+
+    <div class="copyright">
+        <span>© 2025 Favre Emma's Portfolio</span>
+    </div>
+
+    <div id="other-skills-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div class="modal-body">
+                <h2>Languages</h2>
+                <p>French(native), English(C1), Chinese(HSK 4), Spanish(B2)</p>
+                <h2>Interests</h2>
+                <p>East Asia & Intercultural Studies, Culinary Arts, Fashion & Luxury Industry, Design & Creativity</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="soft-skills-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div class="modal-body">
+                <h2>Soft Skills</h2>
+                <p> Analytical thinking, Collaboration, Collaboration, Problem-solving, Curiosity and continuous learning </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
