@@ -809,80 +809,103 @@ body.project-page .main-content {
 }
 
 
-/* Media Query pour les téléphones (Version optimisée pour ton code) */
+/* --- BLOC DE CORRECTION MOBILE (À mettre tout à la fin) --- */
 @media screen and (max-width: 768px) {
     
-    /* 1. On affiche les sidebars (car elles étaient en display:none sous 1024px) */
+    /* 1. On force l'affichage des menus (ils étaient en display:none) */
     .sidebar {
         display: block !important;
-        position: static !important;
+        position: relative !important; /* On les remet dans le flux normal */
         width: 100% !important;
         height: auto !important;
-        padding: 10px 0 !important;
+        background-color: #fff !important;
+        z-index: 100 !important;
     }
 
     .left-sidebar, .right-sidebar {
+        left: auto !important;
+        right: auto !important;
         width: 100% !important;
     }
 
     .sidebar-nav {
-        flex-direction: row !important; /* On met les liens côte à côte */
+        flex-direction: row !important; /* HOME, CONTACT et ABOUT ME sur une ligne */
         justify-content: center !important;
-        padding: 10px !important;
+        align-items: center !important;
+        padding: 20px 10px !important;
         gap: 15px !important;
+        flex-wrap: wrap !important;
     }
 
-    /* 2. On libère l'espace central */
+    /* 2. On ajuste le contenu principal pour qu'il ne soit pas écrasé */
     .main-content {
         margin: 0 !important;
         max-width: 100% !important;
-        padding: 80px 20px 40px 20px !important; /* On laisse de la place pour le haut */
+        padding: 20px !important;
+        width: 100% !important;
     }
 
-    /* 3. On remet le pudding et ses labels dans le droit chemin */
+    /* 3. LE PUDDING : On annule tes positions relatives (-218px etc.) */
     .pudding-flex-container {
-        flex-direction: column !important;
-        gap: 10px !important;
-    }
-
-    .pudding-label-container {
-        position: static !important; /* On annule les positions relatives complexes */
-        justify-content: center !important;
-        margin: 10px 0 !important;
+        flex-direction: column !important; /* Tout l'un sous l'autre */
+        gap: 20px !important;
+        margin-top: 20px !important;
     }
 
     .pudding-image-wrapper {
-        width: 200px !important; /* Taille raisonnable pour mobile */
+        width: 250px !important; /* Taille adaptée au téléphone */
         height: auto !important;
-        order: 2; /* L'image se place entre les labels */
+        order: 2 !important; /* L'image au milieu */
     }
 
     .left-labels-container {
-        order: 1; /* Soft skills en haut */
+        order: 1 !important; /* Les boutons de gauche passent en haut */
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
     }
 
-    .label-right {
-        order: 3; /* Data analytics en bas */
+    .pudding-label-container {
+        position: static !important; /* TRÈS IMPORTANT : annule le right: -218px */
+        justify-content: center !important;
+        text-align: center !important;
+        margin: 0 !important;
+    }
+
+    .pudding-label-container.label-right {
+        order: 3 !important; /* Data Analytics Skills en bas */
+        left: auto !important; /* Annule ton left: -120px */
     }
 
     .pudding-line {
-        display: none !important; /* On cache les lignes noires */
+        display: none !important; /* On cache les lignes noires qui dépassent */
     }
 
-    /* 4. Les projets : un par ligne */
+    /* 4. LES PROJETS : On les met en colonne */
     .projects-grid {
-        display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
+        gap: 30px !important;
     }
 
     .project-folder {
         width: 100% !important;
     }
 
-    /* 5. Ajustement des titres */
+    /* 5. TEXTES ET TITRES */
+    .intro-text p {
+        text-align: center !important; /* Plus joli sur mobile */
+        font-size: 0.85rem !important;
+    }
+
     .projects-title {
-        font-size: 1.2rem !important;
-        margin-top: 30px !important;
+        font-size: 1.5rem !important;
+        margin: 30px 0 !important;
+    }
+
+    .kawaii-note {
+        padding: 15px !important;
+        font-size: 0.9rem !important;
+        width: 90% !important;
     }
 }
