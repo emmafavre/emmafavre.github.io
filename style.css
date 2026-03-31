@@ -810,27 +810,31 @@ body.project-page .main-content {
 
 
 /* ============================================================
-   CORRECTIF MOBILE UNIVERSEL (À METTRE À LA FIN DU FICHIER)
+   CONFIGURATION MOBILE ET TABLETTE (CORRECTIF FINAL)
    ============================================================ */
 
 @media screen and (max-width: 1023px) {
-    /* 1. On réorganise les Sidebars (HOME / CONTACT) */
+    
+    /* 1. RÉORGANISATION DES MENUS (SIDEBARS) */
     .sidebar {
-        display: block !important; /* On les montre même sur petit écran */
-        position: relative !important;
+        display: block !important;
+        position: relative !important; /* Sort de l'affichage fixe sur le côté */
         width: 100% !important;
         height: auto !important;
         top: 0 !important;
         left: 0 !important;
         right: 0 !important;
         background-color: #fff !important;
+        z-index: 100 !important;
     }
 
     .sidebar-nav {
-        flex-direction: row !important; /* Liens alignés horizontalement */
+        flex-direction: row !important; /* Aligne HOME, CONTACT, ABOUT sur une ligne */
         justify-content: center !important;
+        align-items: center !important;
         padding: 15px !important;
         gap: 20px !important;
+        flex-wrap: wrap !important;
     }
 
     .left-sidebar .sidebar-nav, 
@@ -839,61 +843,98 @@ body.project-page .main-content {
         align-items: center !important;
     }
 
-    /* 2. On libère le contenu principal */
+    /* 2. AJUSTEMENT DU CONTENU PRINCIPAL */
     .main-content {
         margin: 0 !important;
         max-width: 100% !important;
         width: 100% !important;
         padding: 20px !important;
+        padding-top: 40px !important; /* Espace sous le menu */
     }
 
-    /* 3. LE PUDDING (C'est ici qu'on annule tes -218px) */
+    /* 3. SECTION PUDDING ET TRAITS (L'essentiel) */
     .pudding-flex-container {
-        flex-direction: column !important; /* Empilement vertical */
-        gap: 20px !important;
-        margin-top: 20px !important;
+        flex-direction: column !important; /* Empile tout verticalement */
+        gap: 15px !important;
+        margin-top: 30px !important;
+        align-items: center !important;
     }
 
+    /* On force les labels à revenir au centre et on annule les positions relatives */
     .pudding-label-container {
-        position: static !important; /* ANNULE LES POSITIONS RELATIVES (-218px, etc.) */
+        position: static !important; 
+        display: flex !important;
+        flex-direction: row !important; /* Garde le trait et le texte côte à côte */
+        align-items: center !important;
         justify-content: center !important;
         width: 100% !important;
         margin: 10px 0 !important;
     }
 
-    /* On garde les traits mais on les réduit pour qu'ils rentrent sur l'écran */
+    /* FORCE L'AFFICHAGE DES TRAITS */
     .pudding-line {
-        display: inline-block !important;
-        width: 35px !important; 
-        min-width: 35px !important;
+        display: inline-block !important; /* Rend le trait visible */
+        visibility: visible !important;
+        width: 40px !important; /* Taille réduite pour mobile */
+        min-width: 40px !important;
+        height: 2px !important;
+        background-color: #000 !important; /* Couleur noire */
         margin: 0 10px !important;
     }
 
-    .pudding-image-wrapper {
-        width: 220px !important; /* Taille parfaite pour iPhone/Android */
-        height: auto !important;
-        order: 2 !important; /* Image au milieu */
+    /* Gestion spécifique du label de droite (Data Analytics) */
+    .label-right {
+        order: 3 !important; 
+        flex-direction: row !important; /* Remet le trait avant ou après selon ton envie */
     }
 
-    .left-labels-container { order: 1 !important; }
-    .label-right { order: 3 !important; flex-direction: row !important; }
+    /* L'image du pudding au milieu */
+    .pudding-image-wrapper {
+        width: 200px !important;
+        height: auto !important;
+        order: 2 !important;
+        margin: 15px 0 !important;
+    }
 
-    /* 4. Les Projets (Dossiers) */
+    .left-labels-container {
+        order: 1 !important; /* Soft skills en premier */
+        width: 100% !important;
+    }
+
+    /* 4. GRILLE DES PROJET (DOSSIERS) */
     .projects-grid {
         flex-direction: column !important;
         align-items: center !important;
-        gap: 40px !important;
+        gap: 30px !important;
     }
 
     .project-folder {
-        width: 90% !important;
+        width: 100% !important;
+        max-width: 250px !important;
     }
 
-    /* 5. Masquer les éléments qui flottent et gênent la lecture */
+    /* 5. NETTOYAGE DES TITRES ET NOTES */
+    .intro-text p {
+        text-align: center !important;
+        font-size: 0.85rem !important;
+    }
+
+    .projects-title {
+        font-size: 1.4rem !important;
+        margin: 30px 0 !important;
+    }
+
+    .kawaii-note {
+        width: 90% !important;
+        padding: 15px !important;
+        font-size: 0.9rem !important;
+    }
+
+    /* On cache ou on centre le copyright pour qu'il ne gêne pas */
     .copyright {
         position: static !important;
-        margin-top: 30px !important;
         text-align: center !important;
-        padding-bottom: 20px !important;
+        padding: 20px 0 !important;
+        display: block !important;
     }
 }
