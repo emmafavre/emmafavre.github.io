@@ -807,3 +807,64 @@ body.project-page .main-content {
     opacity: 0.7; /* L'image devient plus opaque au survol */
     transform: scale(1.05); /* Effet de zoom léger */
 }
+
+
+/* Media Query pour les téléphones */
+@media screen and (max-width: 768px) {
+    
+    /* 1. On repositionne les sidebars en haut */
+    .sidebar {
+        position: relative; /* Elles ne flottent plus sur les côtés */
+        width: 100%;
+        height: auto;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .left-sidebar, .right-sidebar {
+        left: 0;
+        right: 0;
+        top: 0;
+    }
+
+    /* On aligne les liens horizontalement */
+    .sidebar-nav {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    /* 2. On ajuste le contenu principal */
+    .main-content {
+        margin: 0; /* On enlève les marges qui servaient à laisser de la place aux sidebars */
+        padding: 20px;
+        width: 100%;
+    }
+
+    /* 3. La grille de projets passe à 1 seule colonne */
+    .projects-grid {
+        display: grid;
+        grid-template-columns: 1fr; /* Un seul dossier par ligne */
+        gap: 20px;
+    }
+
+    /* 4. Le Pudding et ses labels (le plus délicat) */
+    .pudding-flex-container {
+        flex-direction: column; /* On empile tout verticalement */
+        align-items: center;
+    }
+
+    .left-labels-container, .label-right {
+        text-align: center;
+        width: 100%;
+    }
+
+    .pudding-line {
+        display: none; /* On cache les lignes décoratives qui vont bugger sur mobile */
+    }
+
+    .pudding-image-wrapper {
+        width: 150px; /* On réduit la taille de l'image pour mobile */
+        margin: 20px 0;
+    }
+}
