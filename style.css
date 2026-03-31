@@ -809,62 +809,80 @@ body.project-page .main-content {
 }
 
 
-/* Media Query pour les téléphones */
+/* Media Query pour les téléphones (Version optimisée pour ton code) */
 @media screen and (max-width: 768px) {
     
-    /* 1. On repositionne les sidebars en haut */
+    /* 1. On affiche les sidebars (car elles étaient en display:none sous 1024px) */
     .sidebar {
-        position: relative; /* Elles ne flottent plus sur les côtés */
-        width: 100%;
-        height: auto;
-        text-align: center;
-        padding: 10px 0;
+        display: block !important;
+        position: static !important;
+        width: 100% !important;
+        height: auto !important;
+        padding: 10px 0 !important;
     }
 
     .left-sidebar, .right-sidebar {
-        left: 0;
-        right: 0;
-        top: 0;
+        width: 100% !important;
     }
 
-    /* On aligne les liens horizontalement */
     .sidebar-nav {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
+        flex-direction: row !important; /* On met les liens côte à côte */
+        justify-content: center !important;
+        padding: 10px !important;
+        gap: 15px !important;
     }
 
-    /* 2. On ajuste le contenu principal */
+    /* 2. On libère l'espace central */
     .main-content {
-        margin: 0; /* On enlève les marges qui servaient à laisser de la place aux sidebars */
-        padding: 20px;
-        width: 100%;
+        margin: 0 !important;
+        max-width: 100% !important;
+        padding: 80px 20px 40px 20px !important; /* On laisse de la place pour le haut */
     }
 
-    /* 3. La grille de projets passe à 1 seule colonne */
-    .projects-grid {
-        display: grid;
-        grid-template-columns: 1fr; /* Un seul dossier par ligne */
-        gap: 20px;
-    }
-
-    /* 4. Le Pudding et ses labels (le plus délicat) */
+    /* 3. On remet le pudding et ses labels dans le droit chemin */
     .pudding-flex-container {
-        flex-direction: column; /* On empile tout verticalement */
-        align-items: center;
+        flex-direction: column !important;
+        gap: 10px !important;
     }
 
-    .left-labels-container, .label-right {
-        text-align: center;
-        width: 100%;
-    }
-
-    .pudding-line {
-        display: none; /* On cache les lignes décoratives qui vont bugger sur mobile */
+    .pudding-label-container {
+        position: static !important; /* On annule les positions relatives complexes */
+        justify-content: center !important;
+        margin: 10px 0 !important;
     }
 
     .pudding-image-wrapper {
-        width: 150px; /* On réduit la taille de l'image pour mobile */
-        margin: 20px 0;
+        width: 200px !important; /* Taille raisonnable pour mobile */
+        height: auto !important;
+        order: 2; /* L'image se place entre les labels */
+    }
+
+    .left-labels-container {
+        order: 1; /* Soft skills en haut */
+    }
+
+    .label-right {
+        order: 3; /* Data analytics en bas */
+    }
+
+    .pudding-line {
+        display: none !important; /* On cache les lignes noires */
+    }
+
+    /* 4. Les projets : un par ligne */
+    .projects-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .project-folder {
+        width: 100% !important;
+    }
+
+    /* 5. Ajustement des titres */
+    .projects-title {
+        font-size: 1.2rem !important;
+        margin-top: 30px !important;
     }
 }
