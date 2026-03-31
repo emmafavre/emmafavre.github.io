@@ -809,103 +809,91 @@ body.project-page .main-content {
 }
 
 
-/* --- BLOC DE CORRECTION MOBILE (À mettre tout à la fin) --- */
-@media screen and (max-width: 768px) {
-    
-    /* 1. On force l'affichage des menus (ils étaient en display:none) */
+/* ============================================================
+   CORRECTIF MOBILE UNIVERSEL (À METTRE À LA FIN DU FICHIER)
+   ============================================================ */
+
+@media screen and (max-width: 1023px) {
+    /* 1. On réorganise les Sidebars (HOME / CONTACT) */
     .sidebar {
-        display: block !important;
-        position: relative !important; /* On les remet dans le flux normal */
+        display: block !important; /* On les montre même sur petit écran */
+        position: relative !important;
         width: 100% !important;
         height: auto !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
         background-color: #fff !important;
-        z-index: 100 !important;
-    }
-
-    .left-sidebar, .right-sidebar {
-        left: auto !important;
-        right: auto !important;
-        width: 100% !important;
     }
 
     .sidebar-nav {
-        flex-direction: row !important; /* HOME, CONTACT et ABOUT ME sur une ligne */
+        flex-direction: row !important; /* Liens alignés horizontalement */
         justify-content: center !important;
-        align-items: center !important;
-        padding: 20px 10px !important;
-        gap: 15px !important;
-        flex-wrap: wrap !important;
+        padding: 15px !important;
+        gap: 20px !important;
     }
 
-    /* 2. On ajuste le contenu principal pour qu'il ne soit pas écrasé */
+    .left-sidebar .sidebar-nav, 
+    .right-sidebar .sidebar-nav {
+        padding: 10px !important;
+        align-items: center !important;
+    }
+
+    /* 2. On libère le contenu principal */
     .main-content {
         margin: 0 !important;
         max-width: 100% !important;
-        padding: 20px !important;
         width: 100% !important;
+        padding: 20px !important;
     }
 
-    /* 3. LE PUDDING : On annule tes positions relatives (-218px etc.) */
+    /* 3. LE PUDDING (C'est ici qu'on annule tes -218px) */
     .pudding-flex-container {
-        flex-direction: column !important; /* Tout l'un sous l'autre */
+        flex-direction: column !important; /* Empilement vertical */
         gap: 20px !important;
         margin-top: 20px !important;
     }
 
-    .pudding-image-wrapper {
-        width: 250px !important; /* Taille adaptée au téléphone */
-        height: auto !important;
-        order: 2 !important; /* L'image au milieu */
-    }
-
-    .left-labels-container {
-        order: 1 !important; /* Les boutons de gauche passent en haut */
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 15px !important;
-    }
-
     .pudding-label-container {
-        position: static !important; /* TRÈS IMPORTANT : annule le right: -218px */
+        position: static !important; /* ANNULE LES POSITIONS RELATIVES (-218px, etc.) */
         justify-content: center !important;
-        text-align: center !important;
-        margin: 0 !important;
+        width: 100% !important;
+        margin: 10px 0 !important;
     }
 
-    .pudding-label-container.label-right {
-        order: 3 !important; /* Data Analytics Skills en bas */
-        left: auto !important; /* Annule ton left: -120px */
-    }
-
+    /* On garde les traits mais on les réduit pour qu'ils rentrent sur l'écran */
     .pudding-line {
-        display: none !important; /* On cache les lignes noires qui dépassent */
+        display: inline-block !important;
+        width: 35px !important; 
+        min-width: 35px !important;
+        margin: 0 10px !important;
     }
 
-    /* 4. LES PROJETS : On les met en colonne */
+    .pudding-image-wrapper {
+        width: 220px !important; /* Taille parfaite pour iPhone/Android */
+        height: auto !important;
+        order: 2 !important; /* Image au milieu */
+    }
+
+    .left-labels-container { order: 1 !important; }
+    .label-right { order: 3 !important; flex-direction: row !important; }
+
+    /* 4. Les Projets (Dossiers) */
     .projects-grid {
         flex-direction: column !important;
         align-items: center !important;
-        gap: 30px !important;
+        gap: 40px !important;
     }
 
     .project-folder {
-        width: 100% !important;
-    }
-
-    /* 5. TEXTES ET TITRES */
-    .intro-text p {
-        text-align: center !important; /* Plus joli sur mobile */
-        font-size: 0.85rem !important;
-    }
-
-    .projects-title {
-        font-size: 1.5rem !important;
-        margin: 30px 0 !important;
-    }
-
-    .kawaii-note {
-        padding: 15px !important;
-        font-size: 0.9rem !important;
         width: 90% !important;
+    }
+
+    /* 5. Masquer les éléments qui flottent et gênent la lecture */
+    .copyright {
+        position: static !important;
+        margin-top: 30px !important;
+        text-align: center !important;
+        padding-bottom: 20px !important;
     }
 }
