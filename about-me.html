@@ -11,7 +11,20 @@
                 background-color: #fff !important;
             }
 
-            /* --- Styles Communs Modaux --- */
+            /* --- Styles Structurels des Modaux --- */
+            .modal {
+                display: none; /* Caché par défaut */
+                position: fixed;
+                z-index: 9999; /* Reste toujours au-dessus du contenu */
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgba(0,0,0,0.5); /* Fond semi-transparent sombre */
+                backdrop-filter: blur(4px); /* Léger flou artistique en arrière-plan */
+            }
+
             .modal-content {
                 background: #fff;
                 padding: 40px;
@@ -20,6 +33,40 @@
                 box-shadow: 0 10px 40px rgba(0,0,0,0.2);
                 margin: 5% auto;
                 font-family: inherit; 
+                width: 90%;
+                max-width: 600px;
+                box-sizing: border-box;
+            }
+
+            /* Taille spécifique pour l'affichage des PDF (CV et Lettre) */
+            .large-modal {
+                max-width: 900px;
+                height: 80vh;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .large-modal embed {
+                flex: 1;
+                border-radius: 8px;
+                border: 1px solid #eee;
+                margin-top: 10px;
+            }
+
+            /* Bouton Fermer (X) */
+            .close-button {
+                position: absolute;
+                top: 15px;
+                right: 20px;
+                color: #aaa;
+                font-size: 28px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: color 0.2s ease;
+            }
+
+            .close-button:hover {
+                color: #333;
             }
 
             .modal-subtitle {
@@ -125,47 +172,57 @@
             }
             .separator::before { margin-right: 15px; }
             .separator::after { margin-left: 15px; }
+
+            /* Style curseur pour les boutons cliquables */
+            .document-button {
+                cursor: pointer;
+            }
         </style>
     </head>
+
 <body>
 
     <div class="sidebar left-sidebar">
         <div class="sidebar-nav">
-            <a href="index.html" class="nav-link">HOME</a>
+            <a href="index.html" class="nav-link" data-lang-fr="ACCUEIL" data-lang-en="HOME">HOME</a>
         </div>
     </div>
 
     <div class="sidebar right-sidebar">
         <div class="sidebar-nav">
-            <a href="contact.html" class="nav-link">CONTACT</a>
-            <a href="about-me.html" class="nav-link">ABOUT ME</a>
+            <a href="contact.html" class="nav-link" data-lang-fr="CONTACT" data-lang-en="CONTACT">CONTACT</a>
+            <a href="about-me.html" class="nav-link" data-lang-fr="À PROPOS" data-lang-en="ABOUT ME">ABOUT ME</a>
         </div>
     </div>
 
     <main class="main-content">
         <section class="intro-text about-me-text-container">
-            <h1 class="about-me-title">GET TO KNOW ME</h1>
-            <p>
+            <h1 class="about-me-title" data-lang-fr="APPRENEZ À ME CONNAÎTRE" data-lang-en="GET TO KNOW ME">GET TO KNOW ME</h1>
+            
+            <p data-lang-fr="Je suis une Data Analyste Junior animée par deux passions fondamentales : les données et les langues. J'ai découvert le domaine de l'analyse de données au cours de la première année de mon Master, et cela a été un véritable coup de foudre professionnel. J'ai réalisé que les données, tout comme une langue, racontent une histoire si l'on sait comment les interpréter." 
+               data-lang-en="I am a Junior Data Analyst driven by two core passions: data and languages. I discovered the field of analytics during the first year of my Master’s degree, and it immediately clicked. I realized that data, much like a language, tells a story if you know how to interpret it.">
                 I am a Junior Data Analyst driven by two core passions: data and languages. I discovered the field of analytics during the first year of my Master’s degree, and it immediately clicked. I realized that data, much like a language, tells a story if you know how to interpret it.
             </p>
-            <p>
+            
+            <p data-lang-fr="Nourrie par une grande curiosité et une volonté de m'améliorer continuellement, j'évolue avec aisance dans des environnements multiculturels au rythme soutenu. Je cherche constamment à enrichir mes compétences techniques — de SQL et R à la visualisation de données — afin de collaborer efficacement au sein d'équipes internationales. Je suis désormais impatiente de mettre cette alliance de rigueur analytique et d'adaptabilité culturelle au service de nouveaux défis à l'international." 
+               data-lang-en="I thrive in fast-paced, multicultural settings and possess a strong appetite for learning. My approach is defined by curiosity and continuous improvement, always seeking to refine my technical stack—from SQL and R to data visualization—and contribute effectively to global teams. I am now eager to bring this blend of analytical rigor and cultural adaptability to new international challenges.">
                 I thrive in fast-paced, multicultural settings and possess a strong appetite for learning. My approach is defined by curiosity and continuous improvement, always seeking to refine my technical stack—from SQL and R to data visualization—and contribute effectively to global teams. I am now eager to bring this blend of analytical rigor and cultural adaptability to new international challenges.
             </p>
             
             <div class="document-buttons-container">
-                <div class="document-button" id="toggle-cv">VIEW MY CV</div>
-                <div class="document-button" id="toggle-cover-letter">VIEW MY COVER LETTER</div>
+                <div class="document-button" id="toggle-cv" data-lang-fr="VOIR MON CV" data-lang-en="VIEW MY CV">VIEW MY CV</div>
+                <div class="document-button" id="toggle-cover-letter" data-lang-fr="VOIR MA LETTRE DE MOTIVATION" data-lang-en="VIEW MY COVER LETTER">VIEW MY COVER LETTER</div>
             </div>
 
             <div class="document-buttons-container" style="margin-top: 20px;">
-                <div class="document-button" id="toggle-certificates">VIEW CERTIFICATES</div>
-                <div class="document-button" id="toggle-experiences">EXPERIENCES</div>
+                <div class="document-button" id="toggle-certificates" data-lang-fr="VOIR LES CERTIFICATS" data-lang-en="VIEW CERTIFICATES">VIEW CERTIFICATES</div>
+                <div class="document-button" id="toggle-experiences" data-lang-fr="EXPÉRIENCES" data-lang-en="EXPERIENCES">EXPERIENCES</div>
             </div>
         </section>
     </main>
 
     <div class="copyright">
-        <span>© 2025 Favre Emma's Portfolio</span>
+        <span>© 2026 Favre Emma's Portfolio</span>
     </div>
 
     <div id="cv-modal" class="modal">
@@ -185,8 +242,8 @@
     <div id="certificates-modal" class="modal">
         <div class="modal-content" style="max-width: 850px;">
             <span class="close-button">&times;</span>
-            <span class="modal-subtitle">Technical Validations</span>
-            <h2 class="modal-title">Professional Certifications</h2>
+            <span class="modal-subtitle" data-lang-fr="Validations Techniques" data-lang-en="Technical Validations">Technical Validations</span>
+            <h2 class="modal-title" data-lang-fr="Certifications Professionnelles" data-lang-en="Professional Certifications">Professional Certifications</h2>
 
             <div class="cert-grid">
                 <div class="cert-card">
@@ -194,7 +251,7 @@
                     <div class="cert-info">
                         <h4>Google Data Analytics</h4>
                         <p>Google / Coursera</p>
-                        <a href="https://www.credly.com/badges/39c1042d-2c14-4515-90c7-cbc25e7dd420/linked_in_profile" target="_blank" class="cert-link">Verify Credential</a>
+                        <a href="https://www.credly.com/badges/39c1042d-2c14-4515-90c7-cbc25e7dd420/linked_in_profile" target="_blank" class="cert-link" data-lang-fr="VÉRIFIER LE BADGE" data-lang-en="Verify Credential">Verify Credential</a>
                     </div>
                 </div>
 
@@ -203,7 +260,7 @@
                     <div class="cert-info">
                         <h4>Power BI Data Analyst</h4>
                         <p>Microsoft Professional</p>
-                        <a href="#" target="_blank" class="cert-link">Verify Credential</a>
+                        <a href="https://coursera.org/share/a0f0828ec535c478d656e45df797df28" target="_blank" class="cert-link" data-lang-fr="VÉRIFIER LE BADGE" data-lang-en="Verify Credential">Verify Credential</a>
                     </div>
                 </div>
 
@@ -212,7 +269,7 @@
                     <div class="cert-info">
                         <h4>Excel Skills for Business</h4>
                         <p>Macquarie University</p>
-                        <a href="https://www.coursera.org/account/accomplishments/specialization/M859N2PY9HJC" target="_blank" class="cert-link">Verify Credential</a>
+                        <a href="https://www.coursera.org/account/accomplishments/specialization/M859N2PY9HJC" target="_blank" class="cert-link" data-lang-fr="VÉRIFIER LE BADGE" data-lang-en="Verify Credential">Verify Credential</a>
                     </div>
                 </div>
 
@@ -221,7 +278,7 @@
                     <div class="cert-info">
                         <h4>InsideLVMH Certificate</h4>
                         <p>LVMH Group</p>
-                        <a href="assets/Inside_LVMH_Certificate.pdf" target="_blank" class="cert-link">Verify Certificate</a>
+                        <a href="assets/Inside_LVMH_Certificate.pdf" target="_blank" class="cert-link" data-lang-fr="VÉRIFIER LE CERTIFICAT" data-lang-en="Verify Certificate">Verify Certificate</a>
                     </div>
                 </div>
             </div>
@@ -231,16 +288,19 @@
     <div id="experiences-modal" class="modal">
         <div class="modal-content" style="max-width: 650px;">
             <span class="close-button">&times;</span>
-            <span class="modal-subtitle">Complementary Experiences</span>
-            <h2 class="modal-title">Event Hosting Experience</h2>
+            <span class="modal-subtitle" data-lang-fr="Expériences Complémentaires" data-lang-en="Complementary Experiences">Complementary Experiences</span>
+            <h2 class="modal-title" data-lang-fr="Expérience en événementiel" data-lang-en="Event Hosting Experience">Event Hosting Experience</h2>
             
-            <p style="line-height: 1.7; color: #555; font-size: 0.95rem; font-family: inherit;"> 
+            <p style="line-height: 1.7; color: #555; font-size: 0.95rem; font-family: inherit;" 
+               data-lang-fr="En parallèle de mes études, j'ai réalisé plusieurs missions d'hôtesse d'accueil pour des marques prestigieuses. Ces rôles ont démontré ma capacité à m'adapter à des environnements exigeants, à travailler efficacement en équipe et à maintenir d'excellents standards de communication professionnelle." 
+               data-lang-en="Alongside my studies, I have completed several assignments as a hostess for prestigious brands. These roles demonstrated my ability to adapt to fast-paced environments, work effectively in teams, and maintain high standards of professional communication."> 
                 Alongside my studies, I have completed several assignments as a hostess for prestigious brands. These roles demonstrated my ability to adapt to fast-paced environments, work effectively in teams, and maintain high standards of professional communication.
             </p>
             
-            <div class="separator">Key Collaborations</div>
+            <div class="separator" data-lang-fr="Collaborations Clés" data-lang-en="Key Collaborations">Key Collaborations</div>
 
             <div class="exp-badge-container">
+                <span class="exp-badge">Roland Garros</span>
                 <span class="exp-badge">Renault</span>
                 <span class="exp-badge">BYD</span>
                 <span class="exp-badge">Hermès</span>
@@ -248,11 +308,11 @@
                 <span class="exp-badge">Galeries Lafayette</span>
                 <span class="exp-badge">Congrès des Maires</span>
                 <span class="exp-badge">Puig x Rizzoli</span>
-                <span class="exp-badge">Campus Cyber</span>
+                <span class="exp-badge">Go Entrepreneur</span>
             </div>
         </div>
     </div>
 
-    <script src="about-me.js"></script>
+<script src="script.js" defer></script>
 </body>
 </html>

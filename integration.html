@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'intégration des données - Emma's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { background-color: #fff !important; }
+        .first-section { margin-top: 50px !important; }
+        .method-section { margin-bottom: 45px; padding-bottom: 25px; border-bottom: 1px solid #f0f0f0; }
+        .method-section:last-of-type { border-bottom: none; }
+        
+        .tool-title { font-size: 1.4rem; color: #222; margin-bottom: 15px; font-weight: 600; }
+        .intro-p { margin-bottom: 40px; line-height: 1.6; color: #444; }
+
+        /* Styles pour les images avec flexbox pour alignement */
+        .project-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            margin: 10px 0;
+            display: block;
+        }
+        .project-images-flex {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin: 25px 0;
+        }
+        @media (min-width: 768px) {
+            .project-images-flex {
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+            }
+            .project-images-flex .project-image {
+                flex: 1;
+                margin: 0;
+                max-width: 48%;
+            }
+        }
+
+        .back-button {
+            display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px;
+            background-color: #f8f9fa; color: #333; text-decoration: none; border-radius: 50px;
+            font-size: 0.85rem; font-weight: 500; border: 1px solid #eee; transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+        .back-button:hover { background-color: #333; color: #fff; transform: translateX(-5px); }
+    </style>
+</head>
+<body class="project-page">
+
+    <div class="sidebar left-sidebar">
+        <div class="sidebar-nav">
+            <a href="index.html" class="nav-link" data-lang-fr="ACCUEIL" data-lang-en="HOME">HOME</a>
+        </div>
+    </div>
+
+    <div class="sidebar right-sidebar">
+        <div class="sidebar-nav">
+            <a href="contact.html" class="nav-link" data-lang-fr="CONTACT" data-lang-en="CONTACT">CONTACT</a>
+            <a href="about-me.html" class="nav-link" data-lang-fr="À PROPOS" data-lang-en="ABOUT ME">ABOUT ME</a>
+        </div>
+    </div>
+
+    <main class="main-content">
+
+        <h1 class="project-case-study-title" 
+            data-lang-fr="L'intégration des données" 
+            data-lang-en="Data Integration">
+            L'intégration des données
+        </h1>
+        
+        <div>
+            <a href="skills-analytics.html" class="back-button" 
+               data-lang-fr="Retour aux compétences" 
+               data-lang-en="Back to skills">
+                Retour aux compétences
+            </a>
+        </div>
+
+        <section class="project-intro-text first-section">
+            <p class="intro-p" data-lang-fr="L'intégration est l'étape qui permet de rassembler des informations éparpillées provenant de sources multiples pour n'en faire qu'une seule vue. C'est ce qui transforme une mosaïque de fichiers disparates en un ensemble cohérent. Pour le Data Analyst, c'est le point de départ indispensable pour avoir une vision fiable du passé et une meilleure compréhension du présent."
+               data-lang-en="Integration is the step that brings together scattered information from multiple sources into a single view. It transforms a mosaic of disparate files into a coherent whole. For a Data Analyst, it is the essential starting point for a reliable view of the past and a better understanding of the present.">
+                L'intégration est l'étape qui permet de rassembler des informations éparpillées provenant de sources multiples pour n'en faire qu'une seule vue. C'est ce qui transforme une mosaïque de fichiers disparates en un ensemble cohérent. Pour le Data Analyst, c'est le point de départ indispensable pour avoir une vision fiable du passé et une meilleure compréhension du présent.
+            </p>
+        </section>
+
+        <section class="project-intro-text method-section">
+            <h3 class="tool-title">1. MySQL / SQL Server</h3>
+            <p data-lang-fr="Au-delà de leur capacité à stocker des données, les bases SQL sont de véritables atouts. Avec les bons outils, elles me permettent de centraliser des données venant d'Excel, de fichiers plats ou d'autres applications."
+               data-lang-en="Beyond their capacity to store data, SQL databases are real assets. With the right tools, they allow me to centralize data coming from Excel, flat files, or other applications.">
+                Au-delà de leur capacité à stocker des données, les bases SQL sont de véritables atouts. Avec les bons outils, elles me permettent de centraliser des données venant d'Excel, de fichiers plats ou d'autres applications.
+            </p>
+        </section>
+
+        <section class="project-intro-text method-section">
+            <h3 class="tool-title">2. Langage R</h3>
+            <p data-lang-fr="R est particulièrement puissant pour fusionner des jeux de données complexes. Grâce à des bibliothèques dédiées, je peux importer des sources très différentes et les aligner rapidement."
+               data-lang-en="R is particularly powerful for merging complex datasets. Thanks to dedicated libraries, I can import very different sources and align them quickly.">
+                R est particulièrement puissant pour fusionner des jeux de données complexes. Grâce à des bibliothèques dédiées, je peux importer des sources très différentes et les aligner rapidement.
+            </p>
+        </section>
+
+        <section class="project-intro-text method-section">
+            <h3 class="tool-title" data-lang-fr="3. Power Query et Modélisation" data-lang-en="3. Power Query and Modeling">3. Power Query et Modélisation</h3>
+            <p data-lang-fr="C'est sans doute l'un des outils les plus intuitifs pour l'intégration. Avec Power Query, je peux connecter des sources variées en un rien de temps. Le langage M me donne une flexibilité totale, et la vue Modèle permet de lier ces données entre elles pour créer des rapports fluides et complets."
+               data-lang-en="This is undoubtedly one of the most intuitive tools for integration. With Power Query, I can connect varied sources in no time. The M language gives me total flexibility, and the Model view allows linking these datasets together to create fluid and comprehensive reports.">
+                C'est sans doute l'un des outils les plus intuitifs pour l'intégration. Avec Power Query, je peux connecter des sources variées en un rien de temps. Le langage M me donne une flexibilité totale, et la vue Modèle permet de lier ces données entre elles pour créer des rapports fluides et complets.
+            </p>
+            
+            <div class="project-images-flex">
+                <img src="images/integ1.png" alt="Processus Power Query" class="project-image">
+                <img src="images/schema.png" alt="Schéma de modélisation" class="project-image">
+            </div>
+        </section>
+
+        <section class="project-intro-text method-section">
+            <h3 class="tool-title">4. Python (Pandas / NumPy)</h3>
+            <p data-lang-fr="Avec python, j’utilise la bibliothèque Pandas, qui permet de simplifier la lecture de tous types de formats (CSV, Excel, SQL) pour les centraliser dans un dataframe unique."
+               data-lang-en="With Python, I use the Pandas library, which allows to simplify the reading of all types of formats (CSV, Excel, SQL) to centralize them into a unique dataframe.">
+                Avec python, j’utilise la bibliothèque Pandas, qui permet de simplifier la lecture de tous types de formats (CSV, Excel, SQL) pour les centraliser dans un dataframe unique.
+            </p>
+        </section>
+
+    </main>
+
+    <div class="copyright">
+        <span>© 2026 Favre Emma's Portfolio</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

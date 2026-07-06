@@ -3,57 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Favre Emma's portoflio</title>
+    <title>Favre Emma's Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap">
+    <style>
+        /* Force la même police que la navigation pour la note */
+        .nav-font {
+            font-family: 'GilroyExtraBold', sans-serif !important;
+            text-transform: uppercase;
+        }
+    </style>
 </head>
+
 <body>
+
+    <div id="language-modal" class="lang-modal-overlay">
+        <div class="lang-modal-content">
+            <h2>Select your language <br> Choisissez votre langue</h2>
+            <div class="lang-buttons-container">
+                <button id="btn-fr" class="lang-select-btn">Français 🇫🇷</button>
+                <button id="btn-en" class="lang-select-btn">English 🇬🇧</button>
+            </div>
+        </div>
+    </div>
 
     <div class="sidebar left-sidebar">
         <div class="sidebar-nav">
-            <a href="index.html" class="nav-link">HOME</a>
+            <a href="index.html" class="nav-link" data-lang-fr="ACCUEIL" data-lang-en="HOME">HOME</a>
         </div>
     </div>
 
     <div class="sidebar right-sidebar">
         <div class="sidebar-nav">
-            <a href="contact.html" class="nav-link">CONTACT</a>
-            <a href="about-me.html" class="nav-link">ABOUT ME</a>
+            <a href="contact.html" class="nav-link" data-lang-fr="CONTACT" data-lang-en="CONTACT">CONTACT</a>
+            <a href="about-me.html" class="nav-link" data-lang-fr="À PROPOS" data-lang-en="ABOUT ME">ABOUT ME</a>
         </div>
     </div>
 
     <main class="main-content">
         <section class="intro-text">
-            <p>
-                Hello, I'm Favre Emma. As a Junior Data Analyst, I use my skills in data visualization and reporting to transform complex data into actionable insights. Here you can discover my projects where I explore data to solve real-world business challenges.
+            <p id="intro-p1" 
+               data-lang-fr="Bonjour, je m'appelle Favre Emma. En tant que Data Analyste Junior, mon rôle est de rendre les données accessibles grâce à la visualisation et au reporting. Je transforme des informations brutes en conseils concrets pour aider les entreprises à prendre les meilleures décisions." 
+               data-lang-en="Hello, I'm Favre Emma. As a Junior Data Analyst, my role is to make data accessible through visualization and reporting. I transform raw information into concrete advice to help companies make the best decisions.">
+                Bonjour, je m'appelle Favre Emma. En tant que Data Analyste Junior, mon rôle est de rendre les données accessibles grâce à la visualisation et au reporting. Je transforme des informations brutes en conseils concrets pour aider les entreprises à prendre les meilleures décisions.
             </p>
-            <p>
-                Feel free to navigate through my portfolio — you can click on the sections to learn more about my projects, skills (soft, technical & others), my contacts, and more about me.
+            <p id="intro-p2" 
+               data-lang-fr="N'hésitez pas à naviguer au travers de mon portfolio — vous pouvez cliquer sur les sections pour en savoir plus sur mes projets, mon parcours, mes compétences et mes coordonnées. Bonne visite !" 
+               data-lang-en="Feel free to navigate through my portfolio — you can click on the sections to learn more about my projects, my background, my skills, and my contact details. Enjoy your visit!">
+                N'hésitez pas à naviguer au travers de mon portfolio — vous pouvez cliquer sur les sections pour en savoir plus sur mes projets, mon parcours, mes compétences et mes coordonnées. Bonne visite !
             </p>
         </section>
 
-        <h1 class="projects-title view-projects-title">MY LAST PROJECTS</h1>
+        <h1 class="projects-title view-projects-title" data-lang-fr="MES PROJETS" data-lang-en="MY PROJECTS">MY PROJECTS</h1>
         
         <section id="projects-section" class="projects-grid">
             <a href="project1.html" class="project-folder">
                 <img src="images/dossier.png" alt="Dossier de projet" class="folder-icon">
-                <p class="project-title-text">Project 1: Insurance Fraud Detection (M1) </p>
+                <p class="project-title-text" data-lang-fr="Projet 1 (2024) : Détection de la fraude à l'assurance (Projet de master M1)" data-lang-en="Project 1 (2024): Insurance Fraud Detection (Master M1 Project)">Project 1 (2024): Insurance Fraud Detection (Master M1 Project) </p>
             </a>
             <a href="project2.html" class="project-folder">
                 <img src="images/dossier.png" alt="Dossier de projet" class="folder-icon">
-                <p class="project-title-text">Project 2: Google Data Analytics Capstone </p>
+                <p class="project-title-text" data-lang-fr="Projet 2 (2025) : Google Data Analytics Certificate" data-lang-en="Project 2 (2025): Google Data Analytics Certificate">Project 2 (2025): Google Data Analytics Certificate </p>
             </a>
             <a href="project3.html" class="project-folder">
                 <img src="images/dossier.png" alt="Dossier de projet" class="folder-icon">
-                <p class="project-title-text">Project 3: iFood Data Analysis case </p>
+                <p class="project-title-text" data-lang-fr="Projet 3 (2026) : Tailwind Traders (Microsoft Power BI Certificate)" data-lang-en="Project 3 (2026): Tailwind Traders (Microsoft Power BI Certificate)">Project 3 (2026): Tailwind Traders (Microsoft Power BI Certificate) </p>
             </a>
         </section>
 
-        <h1 class="projects-title skills-title">SKILLS</h1>
-        <p class="kawaii-note">
+        <h1 class="projects-title skills-title" data-lang-fr="COMPÉTENCES" data-lang-en="SKILLS">SKILLS</h1>
+        <p class="kawaii-note nav-font" id="skills-note">
             <i class="fas fa-star star-icon"></i>
-            Click on the skills you're interested in knowing
+            <span data-lang-fr="Cliquez sur les compétences qui vous intéressent" data-lang-en="Click on the skills you're interested in knowing">Cliquez sur les compétences qui vous intéressent</span>
         </p>
         
         <div class="pudding-flex-container">
@@ -61,10 +83,10 @@
             <div class="left-labels-container">
                 <div class="pudding-label-container label-left">
                     <span class="pudding-line"></span>
-                    <a href="#" id="toggle-soft-skills">SOFT SKILLS</a>
+                    <a href="#" id="toggle-soft-skills" data-lang-fr="COMPÉTENCES HUMAINES" data-lang-en="SOFT SKILLS">SOFT SKILLS</a>
                 </div>
                 <div class="pudding-label-container label-left-bottom">
-                    <a href="#" id="toggle-other-skills">OTHER SKILLS</a>
+                    <a href="#" id="toggle-other-skills" data-lang-fr="AUTRES COMPÉTENCES" data-lang-en="OTHER SKILLS">OTHER SKILLS</a>
                     <span class="pudding-line"></span>
                 </div>
             </div>
@@ -74,7 +96,7 @@
             </div>
             
             <div class="pudding-label-container label-right">
-                <a href="skills-analytics.html">DATA ANALYTICS SKILLS</a>
+                <a href="skills-analytics.html" data-lang-fr="COMPÉTENCES EN DATA ANALYTICS" data-lang-en="DATA ANALYTICS SKILLS">DATA ANALYTICS SKILLS</a>
                 <span class="pudding-line"></span>
             </div>
             
@@ -83,17 +105,21 @@
     </main>
 
     <div class="copyright">
-        <span>© 2025 Favre Emma's Portfolio</span>
+        <span>© 2026 Favre Emma's Portfolio</span>
     </div>
 
     <div id="other-skills-modal" class="modal">
         <div class="modal-content">
             <span class="close-button">&times;</span>
             <div class="modal-body">
-                <h2>Languages</h2>
-                <p>French(native), English(C1), Chinese(HSK 4), Spanish(B2)</p>
-                <h2>Interests</h2>
-                <p>East Asia & Intercultural Studies, Culinary Arts, Fashion & Luxury Industry, Design & Creativity</p>
+                <h2 data-lang-fr="Langues" data-lang-en="Languages">Languages</h2>
+                <p data-lang-fr="Français (natif), Anglais (C1), Chinois (HSK 4), Espagnol (B2), Japonais (notions)" 
+                   data-lang-en="French (native), English (C1), Chinese (HSK 4), Spanish (B2), Japanese (basics)">
+                   Français (natif), Anglais (C1), Chinois (HSK 4), Espagnol (B2), Japonais (notions)</p>
+                <h2 data-lang-fr="Centres d'intérêt" data-lang-en="Interests">Interests</h2>
+                <p data-lang-fr="Études interculturelles (Asie du Sud-Est), Art (culinaire, peinture), Mode & Luxe" 
+                   data-lang-en="Intercultural studies (SE Asia), Art (culinary, painting), Fashion & Luxury">
+                   Études interculturelles (Asie du Sud-Est), Art (culinaire, peinture), Mode & Luxe</p>
             </div>
         </div>
     </div>
@@ -102,8 +128,10 @@
         <div class="modal-content">
             <span class="close-button">&times;</span>
             <div class="modal-body">
-                <h2>Soft Skills</h2>
-                <p> Analytical thinking, Collaboration, Collaboration, Problem-solving, Curiosity and continuous learning </p>
+                <h2 data-lang-fr="Compétences humaines" data-lang-en="Soft Skills">Soft Skills</h2>
+                <p data-lang-fr="Esprit d'analyse, Communication pédagogique, Collaboration, Résolution de problèmes, Curiosité & Apprentissage continu" 
+                   data-lang-en="Analytical thinking, Pedagogical communication, Collaboration, Problem-solving, Curiosity & Continuous learning">
+                   Esprit d'analyse, Communication pédagogique, Collaboration, Résolution de problèmes, Curiosité & Apprentissage continu</p>
             </div>
         </div>
     </div>

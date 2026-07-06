@@ -6,59 +6,122 @@
     <title>Data Analytics Skills - Emma's Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body { background-color: #fff !important; }
+        
+        .skills-main-title {
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            letter-spacing: 2px;
+            color: #111;
+        }
+
+        .skills-images-flex {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin: 25px auto;
+            max-width: 1000px; /* Réduit pour plus d'harmonie */
+            padding: 0 20px;
+        }
+
+        .skill-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-box-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #333;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Images plus petites, centrées et avec bordure fine pour les png fond blanc */
+        .skill-box-image {
+            width: 100%;
+            max-width: 300px; /* Taille contrôlée pour bien voir l'image complète */
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid #f0f0f0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            display: block;
+            object-fit: contain;
+            background-color: #fff;
+        }
+
+        @media (min-width: 768px) {
+            .skills-images-flex {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 60px;
+            }
+            .skills-images-flex .skill-box {
+                flex: 1 1 40%;
+                max-width: 40%;
+            }
+        }
+    </style>
 </head>
-<body>
+<body class="project-page">
 
     <div class="sidebar left-sidebar">
         <div class="sidebar-nav">
-            <a href="index.html" class="nav-link">HOME</a>
+            <a href="index.html" class="nav-link" data-lang-fr="ACCUEIL" data-lang-en="HOME">HOME</a>
         </div>
     </div>
 
     <div class="sidebar right-sidebar">
         <div class="sidebar-nav">
-            <a href="contact.html" class="nav-link">CONTACT</a>
-            <a href="about-me.html" class="nav-link">ABOUT ME</a>
+            <a href="contact.html" class="nav-link" data-lang-fr="CONTACT" data-lang-en="CONTACT">CONTACT</a>
+            <a href="about-me.html" class="nav-link" data-lang-fr="À PROPOS" data-lang-en="ABOUT ME">ABOUT ME</a>
         </div>
     </div>
 
     <main class="main-content">
-        <h1 class="projects-title skills-title">DATA ANALYTICS SKILLS</h1>
         
-        <section class="skills-grid">
-            <div class="skill-container">
-                <h2 class="skill-title">Data Integration</h2>
-                <a href="#" class="skill-card">
-                    <img src="images/skills/data-integration.png" class="skill-image">
-                </a>
-            </div>
+        <h1 class="project-case-study-title skills-main-title" 
+            data-lang-fr="COMPÉTENCES DATA ANALYTICS" 
+            data-lang-en="DATA ANALYTICS SKILLS">
+            DATA ANALYTICS SKILLS
+        </h1>
+        
+        <section class="skills-images-flex">
             
-            <div class="skill-container">
-                <h2 class="skill-title">Data Cleaning</h2>
-                <a href="#" class="skill-card">
-                    <img src="images/skills/data-cleaning.png"class="skill-image">
-                </a>
-            </div>
+            <a href="integration.html" class="skill-box">
+                <h2 class="skill-box-title" data-lang-fr="Intégration de Données" data-lang-en="Data Integration">Data Integration</h2>
+                <img src="images/data_int.png" alt="Data Integration" class="skill-box-image">
+            </a>
+            
+            <a href="cleaning.html" class="skill-box">
+                <h2 class="skill-box-title" data-lang-fr="Nettoyage de Données" data-lang-en="Data Cleaning">Data Cleaning</h2>
+                <img src="images/data-cleansing.png" alt="Data Cleaning" class="skill-box-image">
+            </a>
         
-            <div class="skill-container">
-                <h2 class="skill-title">Dashboarding</h2>
-                <a href="#" class="skill-card">
-                    <img src="images/skills/dashboarding.png" class="skill-image">
-                </a>
-            </div>
-        
-            <div class="skill-container">
-                <h2 class="skill-title">Communication</h2>
-                <a href="#" class="skill-card">
-                    <img src="images/skills/communication.png"  class="skill-image">
-                </a>
-            </div>
+            <a href="dashboarding.html" class="skill-box">
+                <h2 class="skill-box-title" data-lang-fr="Création de Dashboards" data-lang-en="Dashboarding">Dashboarding</h2>
+                <img src="images/dashboard.png" alt="Dashboarding" class="skill-box-image">
+            </a>
+
         </section>
     </main>
 
     <div class="copyright">
-        <span>© 2025 Favre Emma's Portfolio</span>
+        <span>© 2026 Favre Emma's Portfolio</span>
     </div>
 
+    <script src="script.js"></script>
 </body>
 </html>

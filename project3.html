@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 3 - Tailwind Traders</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            background-color: #fff !important;
+        }
+        /* Espace supplémentaire pour décoller la première section du titre principal */
+        .first-section {
+            margin-top: 50px !important; 
+        }
+        /* Style pour le tableau des outils */
+        .tools-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0 10px 0;
+            font-size: 0.95rem;
+        }
+        .tools-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .tools-table td:first-child {
+            font-weight: 600;
+            width: 30%;
+            color: #333;
+            letter-spacing: 0.5px;
+        }
+        .tools-table td:last-child {
+            color: #666;
+        }
+        /* Style pour harmoniser l'affichage de vos captures d'écran */
+        .project-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            margin: 25px auto;
+            display: block;
+        }
+        /* Conteneur pour aligner deux images côte à côte en version Desktop */
+        .project-images-flex {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin: 25px 0;
+        }
+        @media (min-width: 768px) {
+            .project-images-flex {
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+            .project-images-flex .project-image {
+                flex: 1;
+                margin: 0;
+                max-width: 48%;
+            }
+        }
+    </style>
+</head>
+<body class="project-page">
+
+    <div class="sidebar left-sidebar">
+        <div class="sidebar-nav">
+            <a href="index.html" class="nav-link" data-lang-fr="ACCUEIL" data-lang-en="HOME">HOME</a>
+        </div>
+    </div>
+
+    <div class="sidebar right-sidebar">
+        <div class="sidebar-nav">
+            <a href="contact.html" class="nav-link" data-lang-fr="CONTACT" data-lang-en="CONTACT">CONTACT</a>
+            <a href="about-me.html" class="nav-link" data-lang-fr="À PROPOS" data-lang-en="ABOUT ME">ABOUT ME</a>
+        </div>
+    </div>
+
+    <main class="main-content">
+
+        <h1 class="project-case-study-title" 
+            data-lang-fr="Projet Power BI – Tailwind Traders : Dashboard Commercial & Financier" 
+            data-lang-en="Power BI Project – Tailwind Traders: Sales & Financial Dashboard">
+            Power BI Project – Tailwind Traders: Sales & Financial Dashboard
+        </h1>
+
+        <section class="project-intro-text first-section">
+            <h2 class="section-title" data-lang-fr="L'OBJECTIF" data-lang-en="THE OBJECTIVE">L'OBJECTIF</h2>
+            <p data-lang-fr="Pour ce projet complet, j’ai décidé de travailler sur un cas pratique d'entreprise pour la société Tailwind Traders. L'objectif principal est de structurer, nettoyer et modéliser des données de ventes et d'approvisionnement afin de concevoir deux dashboards interactifs : un suivi des ventes (Sales Overview) et un suivi de la rentabilité (Profit Overview). Même si le projet initial ne demandait pas de recommandations, j'ai choisi de pousser l'exercice plus loin en analysant les résultats pour répondre à une problématique business concrète et en dégager des axes d'amélioration."
+               data-lang-en="For this complete project, I decided to work on a business case study for the company Tailwind Traders. The main objective is to structure, clean, and model sales and supply data in order to design two interactive dashboards: a sales tracker (Sales Overview) and a profitability tracker (Profit Overview). Even though the initial project did not require recommendations, I chose to take the exercise further by analyzing the results to address a concrete business issue and identify areas for improvement.">
+                Pour ce projet complet, j’ai décidé de travailler sur un cas pratique d'entreprise pour la société Tailwind Traders. L'objectif principal est de structurer, nettoyer et modéliser des données de ventes et d'approvisionnement afin de concevoir deux dashboards interactifs : un suivi des ventes (Sales Overview) et un suivi de la rentabilité (Profit Overview). Même si le projet initial ne demandait pas de recommandations, j'ai choisi de pousser l'exercice plus loin en analysant les résultats pour répondre à une problématique business concrète et en dégager des axes d'amélioration.
+            </p>
+        </section>
+
+<section class="project-intro-text">
+            <h2 class="section-title" data-lang-fr="OUTILS & TECHNOLOGIES" data-lang-en="TOOLS & TECHNOLOGIES">OUTILS & TECHNOLOGIES</h2>
+            <table class="tools-table">
+                <tr>
+                    <td data-lang-fr="Plateformes" data-lang-en="Platforms">Plateformes</td>
+                    <td>Microsoft Excel, Microsoft Power BI Desktop</td>
+                </tr>
+                <tr>
+                    <td data-lang-fr="Codes & Langages" data-lang-en="Codes & Languages">Codes & Langages</td>
+                    <td>DAX (Data Analysis Expressions), Python</td>
+                </tr>
+                <tr>
+                    <td data-lang-fr="Librairies & Outils" data-lang-en="Libraries & Tools">Librairies & Outils</td>
+                    <td>Power Query, Pandas (Python), Performance Analyzer</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="project-intro-text">
+            <h2 class="section-title" data-lang-fr="LA DATA" data-lang-en="THE DATA">LA DATA</h2>
+            <p data-lang-fr="Les données fournies couvrent une période allant de 2020 à 2023. On y retrouve des informations très variées telles que le prix des produits, les quantités achetées, les taxes appliquées, les catégories d'articles, les informations de livraison, les garanties, ainsi que les pays concernés par les transactions et leurs devises associées. Afin de pouvoir exploiter correctement ces données, j'ai commencé par enrichir et préparer le fichier des ventes sous Excel."
+               data-lang-en="The dataset provided covers a period from 2020 to 2023. It contains highly diverse information such as product prices, quantities purchased, taxes applied, item categories, shipping details, warranties, as well as the countries involved in the transactions and their associated currencies. In order to properly exploit this data, I started by enriching and preparing the sales file in Excel.">
+                Les données fournies couvrent une période allant de 2020 à 2023. On y retrouve des informations très variées telles que le prix des produits, les quantités achetées, les taxes appliquées, les catégories d'articles, les informations de livraison, les garanties, ainsi que les pays concernés par les transactions et leurs devises associées. Afin de pouvoir exploiter correctement ces données, j'ai commencé par enrichir et préparer le fichier des ventes sous Excel.
+            </p>
+            <img src="images/brut.png" alt="Tailwind Traders Raw Data" class="project-image">
+        </section>
+
+        <section class="project-intro-text">
+            <h2 class="section-title" data-lang-fr="NETTOYAGE DE DONNÉES" data-lang-en="DATA CLEANING">NETTOYAGE DE DONNÉES</h2>
+            <p data-lang-fr="Dans un premier temps, j'ai ouvert le fichier des ventes pour y ajouter des indicateurs financiers indispensables. J'ai créé les colonnes 'Cost per Unit' (avec la formule =E2*0.35 pour estimer le coût de revient à 35% du prix brut), 'Gross Revenue' (=E2*H2), 'Total Tax' (=G2*H2), 'Net Revenue' (=I2-J2) et enfin la colonne 'Profit' avec la formule =K2-(F2*G2). En observant les dix premières lignes, on remarque déjà des tendances : la perceuse électrique (Power Drill Set) affiche le montant le plus élevé, tandis que le papier peint floral génère le revenu net le plus bas. J'ai également constaté qu'Alice était la représentante commerciale la plus active sur cet échantillon."
+               data-lang-en="First, I opened the sales file to add essential financial indicators. I created the columns 'Cost per Unit' (using the formula =E2*0.35 to estimate the cost price at 35% of the gross price), 'Gross Revenue' (=E2*H2), 'Total Tax' (=G2*H2), 'Net Revenue' (=I2-J2) and finally the 'Profit' column with the formula =K2-(F2*G2). By looking at the first ten rows, trends are already noticeable: the Power Drill Set shows the highest amount, while the floral wallpaper generates the lowest net revenue. I also noted that Alice was the most active sales representative in this sample.">
+                Dans un premier temps, j'ai ouvert le fichier des ventes pour y ajouter des indicateurs financiers indispensables. J'ai créé les colonnes "Cost per Unit" (avec la formule =E2*0.35 pour estimer le coût de revient à 35% du prix brut), "Gross Revenue" (=E2*H2), "Total Tax" (=G2*H2), "Net Revenue" (=I2-J2) et enfin la colonne "Profit" avec la formule =K2-(F2*G2). En observant les dix premières lignes, on remarque déjà des tendances : la perceuse électrique (Power Drill Set) affiche le montant le plus élevé, tandis que le papier peint floral génère le revenu net le plus bas. J'ai également constaté qu'Alice était la représentante commerciale la plus active sur cet échantillon.
+            </p>
+            <img src="images/excel.png" alt="Data Cleaning in Excel" class="project-image">
+        </section>
+
+        <section class="project-intro-text">
+            <h2 class="section-title" data-lang-fr="INTÉGRATION DANS POWER BI / QUERY" data-lang-en="POWER BI / QUERY INTEGRATION">INTÉGRATION DANS POWER BI / QUERY</h2>
+            <p data-lang-fr="Une fois cette préparation terminée, j'ai importé mes différents fichiers (Ventes, Achats, Pays) dans Power BI et je suis passé dans Power Query pour optimiser les types de données. J'ai configuré les identifiants et les volumes en nombres entiers, et toutes les colonnes monétaires en nombres décimaux fixes pour éviter les erreurs d'arrondi. Pour la table des achats, j'ai validé la colonne de statut des retours et appliqué un filtre pour ne garder que les produits non retournés afin de ne pas fausser l'analyse. Enfin, j'ai intégré dynamiquement des taux de change historiques via un script Python avec la bibliothèque pandas, ce qui m'a permis de récupérer proprement les équivalences entre le dollar, l'euro, la livre sterling et d'autres devises."
+               data-lang-en="Once this preparation was completed, I imported my various files (Sales, Purchases, Countries) into Power BI and moved to Power Query to optimize data types. I configured IDs and volumes as integers, and all currency columns as fixed decimal numbers to prevent rounding errors. For the purchases table, I validated the return status column and applied a filter to keep only non-returned products so as not to distort the analysis. Finally, I dynamically integrated historical exchange rates via a Python script using the pandas library, which allowed me to cleanly retrieve equivalences between the dollar, euro, pound sterling, and other currencies.">
+                Une fois cette préparation terminée, j'ai importé mes différents fichiers (Ventes, Achats, Pays) dans Power BI et je suis passé dans Power Query pour optimiser les types de données. J'ai configuré les identifiants et les volumes en nombres entiers, et toutes les colonnes monétaires en nombres décimaux fixes pour éviter les erreurs d'arrondi. Pour la table des achats, j'ai validé la colonne de statut des retours et appliqué un filtre pour ne garder que les produits non retournés afin de ne pas fausser l'analyse. Enfin, j'ai intégré dynamiquement des taux de change historiques via un script Python avec la bibliothèque pandas, ce qui m'a permis de récupérer proprement les équivalences entre le dollar, l'euro, la livre sterling et d'autres devises.
+            </p>
+            <div class="project-images-flex">
+                <img src="images/pq1.png" alt="Power Query Optimizations" class="project-image">
+                <img src="images/script python.png" alt="Python Script Exchange Rates Integration" class="project-image">
+            </div>
+        </section>
+
+        <section class="project-intro-text">
+            <h2 class="section-title" data-lang-fr="RELATION DES TABLES" data-lang-en="DATA MODEL & RELATIONSHIPS">RELATION DES TABLES</h2>
+            <p data-lang-fr="Après l'étape Power Query, je me suis rendu dans la vue modèle pour concevoir mes relations. Contrairement à un projet à table unique, j'ai ici structuré un vrai modèle relationnel. J'ai lié la table des pays à celle des devises en 1:1 bi-directionnel, puis j'ai connecté les ventes aux pays en Many-to-One (*:1). J'ai aussi lié les achats aux ventes en 1:1 via l'identifiant de commande. Pour l'analyse temporelle, j'ai généré une table calendrier en DAX couvrant les années 2020 à 2023, connectée aux achats. Enfin, j'ai créé une table calculée globale 'Sales in USD' pour convertir l'intégralité des transactions dans une devise unique grâce à la fonction RELATED. Toutes les relations clés ont été configurées en bi-directionnel pour assurer la fluidité des filtres."
+               data-lang-en="After the Power Query step, I went to the model view to design my relationships. Unlike a single-table project, I structured a real relational data model here. I linked the countries table to the currencies table in a 1:1 bi-directional relationship, then connected sales to countries in a Many-to-One (*:1) relationship. I also linked purchases to sales in a 1:1 relationship via the order ID. For time analysis, I generated a calendar table in DAX covering the years 2020 to 2023, connected to purchases. Finally, I created a global calculated table 'Sales in USD' to convert all transactions into a single currency using the RELATED function. All key relationships were configured as bi-directional to ensure seamless filtering.">
+                Après l'étape Power Query, je me suis rendu dans la vue modèle pour concevoir mes relations. Contrairement à un projet à table unique, j'ai ici structuré un vrai modèle relationnel. J'ai lié la table des pays à celle des devises en 1:1 bi-directionnel, puis j'ai connecté les ventes aux pays en Many-to-One (∗:1). J'ai aussi lié les achats aux ventes en 1:1 via l'identifiant de commande. Pour l'analyse temporelle, j'ai généré une table calendrier en DAX couvrant les années 2020 à 2023, connectée aux achats. Enfin, j'ai créé une table calculée globale "Sales in USD" pour convertir l'intégralité des transactions dans une devise unique grâce à la fonction RELATED. Toutes les relations clés ont été configurées en bi-directionnel pour assurer la fluidité des filtres.
+            </p>
+            <div class="project-images-flex">
+                <img src="images/star schema deb.png" alt="Star Schema Initial State" class="project-image">
+                <img src="images/star schema fin.png" alt="Star Schema Final Relational Model" class="project-image">
+            </div>
+        </section>
+
+        <section class="project-intro-text">
+            <h2 class="section-title" data-lang-fr="CRÉATION DU DASHBOARD" data-lang-en="DASHBOARD CREATION">CRÉATION DU DASHBOARD</h2>
+            <p data-lang-fr="Pour la phase visuelle, j'ai cherché à créer une disposition homogène et épurée sur mes deux pages de rapport. J'ai positionné des bannières en haut pour accueillir mes indicateurs clés sous forme de cartes. Sur le premier dashboard, j'ai disposé un menu de filtres à droite permettant de segmenter les graphiques par pays. Avant de concevoir les visuels, j'ai créé mes mesures en DAX pour calculer la marge bénéficiaire annuelle (en divisant la somme des profits par la somme des revenus nets), mais aussi la marge trimestrielle et la marge cumulée (YTD) via des fonctions d'intelligence temporelle. J'ai aussi calculé une mesure de vente médiane pour identifier le niveau de performance standard sans qu'il soit biaisé par des valeurs extrêmes. Avant la publication, j'ai testé mes visuels avec le Performance Analyzer, confirmant un temps de chargement optimal inférieur à 200 ms."
+               data-lang-en="For the visual phase, I aimed to create a consistent and clean layout across both report pages. I positioned top banners to host my key performance indicators as cards. On the first dashboard, I set up a filter menu on the right to segment the charts by country. Before designing the visuals, I created my DAX measures to calculate the annual profit margin (by dividing total profit by total net revenue), as well as quarterly margin and Year-To-Date (YTD) margin using time intelligence functions. I also calculated a median sales measure to identify the standard performance level without it being skewed by extreme values. Before publishing, I tested my visuals with the Performance Analyzer, confirming an optimal loading time below 200 ms.">
+                Pour la phase visuelle, j'ai cherché à créer une disposition homogène et épurée sur mes deux pages de rapport. J'ai positionné des bannières en haut pour accueillir mes indicateurs clés sous forme de cartes. Sur le premier dashboard, j'ai disposé un menu de filtres à droite permettant de segmenter les graphiques par pays. Avant de concevoir les visuels, j'ai créé mes mesures en DAX pour calculer la marge bénéficiaire annuelle (en divisant la somme des profits par la somme des revenus nets), mais aussi la marge trimestrielle et la marge cumulée (YTD) via des fonctions d'intelligence temporelle. J'ai aussi calculé une mesure de vente médiane pour identifier le niveau de performance standard sans qu'il soit biaisé par des valeurs extrêmes. Avant la publication, j'ai testé mes visuels avec le Performance Analyzer, confirmant un temps de chargement optimal inférieur à 200 ms.
+            </p>
+            <img src="images/layout.png" alt="Power BI Layout & Wireframing" class="project-image">
+        </section>
+
+        <section class="project-intro-text">
+            <h2 class="section-title" data-lang-fr="VISUELS ET CHIFFRES" data-lang-en="VISUALS & METRICS">VISUELS ET CHIFFRES</h2>
+            <p data-lang-fr="Sur le premier dashboard dédié aux ventes (Sales Overview), on observe un stock global de 13 635 unités et une valeur de vente médiane solide qui s'établit à 222,50 $. Le premier graphique en barres montre que le Royaume-Uni (UK) domine nettement le programme de fidélité avec 315 points, suivi de près par les USA (305) et l'Australie (282). En analysant le graphique des volumes par produit, on constate que le papier peint floral et les pots en porcelaine sont les plus vendus en quantité (6 unités chacun). Enfin, le graphique d'évolution temporelle met en évidence une forte instabilité à l'automne 2023 : après des pics importants en septembre, les ventes s'effondrent brutalement en octobre pour atteindre un point bas historique à 42,50 $, avant de remonter à 390 $.<br><br>Sur le deuxième dashboard axé sur la rentabilité (Profit Overview), les cartes affichent un revenu net total de 13 894,51 $ et une excellente marge bénéficiaire globale de 62,27 %. Le graphique en barres des produits nous indique que c'est le canapé modulable (Modular Sofa Set) qui génère le plus gros revenu net (926,36 $), suivi par l'alarme à détecteur de mouvement. Le graphique en anneau révèle quant à lui une répartition parfaite de la marge par pays, chacun pesant équitablement pour environ 20 % du total. C'est en observant le dernier graphique sur l'évolution de la marge dans le temps que l'on détecte une anomalie majeure : alors que la marge reste plate et stable à 62,37 % presque toute l'année, elle subit une chute critique et brutale au cours du mois d'octobre 2023, s'écrasant à 34,58 % avant de se rétablir immédiatement."
+               data-lang-en="On the first dashboard dedicated to sales (Sales Overview), we observe a total stock of 13,635 units and a solid median sales value established at $222.50. The first bar chart shows that the United Kingdom (UK) clearly dominates the loyalty program with 315 points, closely followed by the USA (305) and Australia (282). Analyzing the volume by product chart, we notice that floral wallpaper and porcelain pots are the top sellers in quantity (6 units each). Finally, the time-series chart highlights high instability in autumn 2023: after significant peaks in September, sales brutally collapse in October to hit an all-time low at $42.50, before bouncing back to $390.<br><br>On the second dashboard focused on profitability (Profit Overview), the cards display a total net revenue of $13,894.51 and an excellent overall profit margin of 62.27%. The product bar chart indicates that the Modular Sofa Set generates the largest net revenue ($926.36), followed by the motion-sensor alarm. The donut chart reveals a perfect distribution of margin by country, each weighing equally at around 20% of the total. It is by observing the final chart on margin evolution over time that a major anomaly is detected: while the margin remains flat and stable at 62.37% nearly all year long, it suffers a critical and sudden drop during October 2023, crashing to 34.58% before instantly recovering.">
+                Sur le premier dashboard dédié aux ventes (Sales Overview), on observe un stock global de 13 635 unités et une valeur de vente médiane solide qui s'établit à 222,50 $. Le premier graphique en barres montre que le Royaume-Uni (UK) domine nettement le programme de fidélité avec 315 points, suivi de près par les USA (305) et l'Australie (282). En analysant le graphique des volumes par produit, on constate que le papier peint floral et les pots en porcelaine sont les plus vendus en quantité (6 unités chacun). Enfin, le graphique d'évolution temporelle met en évidence une forte instabilité à l'automne 2023 : après des pics importants en septembre, les ventes s'effondrent brutalement en octobre pour atteindre un point bas historique à 42,50 $, avant de remonter à 390 $.<br><br>Sur le deuxième dashboard axé sur la rentabilité (Profit Overview), les cartes affichent un revenu net total de 13 894,51 $ et une excellente marge bénéficiaire globale de 62,27 %. Le graphique en barres des produits nous indique que c'est le canapé modulable (Modular Sofa Set) qui génère le plus gros revenu net (926,36 $), suivi par l'alarme à détecteur de mouvement. Le graphique en anneau révèle quant à lui une répartition parfaite de la marge par pays, chacun pesant équitablement pour environ 20 % du total. C'est en observant le dernier graphique sur l'évolution de la marge dans le temps que l'on détecte une anomalie majeure : alors que la marge reste plate et stable à 62,37 % presque toute l'année, elle subit une chute critique et brutale au cours du mois d'octobre 2023, s'écrasant à 34,58 % avant de se rétablir immédiatement.
+            </p>
+            <div class="project-images-flex">
+                <img src="images/dash1.png" alt="Sales Overview Dashboard" class="project-image">
+                <img src="images/dash2.png" alt="Profit Overview Dashboard" class="project-image">
+            </div>
+        </section>
+
+        <section class="project-intro-text">
+            <h2 class="section-title" data-lang-fr="DIAGNOSTIC BUSINESS" data-lang-en="BUSINESS INSIGHTS & DIAGNOSTIC">DIAGNOSTIC BUSINESS</h2>
+            <p data-lang-fr="En ce qui concerne les chiffres et le diagnostic business, ce croisement de données révèle un problème urgent en octobre 2023. La baisse simultanée du volume des ventes (42,50 $) et l'effondrement de moitié du taux de marge (34,58 %) prouvent que l'entreprise a fait face soit à une hausse massive et imprévue des coûts logistiques/fournisseurs non répercutée, soit à une politique de déstockage agressive à perte. Pour y remédier, il est indispensable d'auditer les contrats fournisseurs et de sécuriser les prix d'achat. Par ailleurs, bien que le Royaume-Uni et les USA soient nos clients les plus engagés (meilleurs scores de fidélité et fortes ventes médianes), ils ne dégagent pas plus de marge que les autres pays (bloqués à 20 %). Il faut donc revoir la stratégie marketing sur ces zones en poussant des produits à plus forte valeur ajoutée, comme le mobilier premium, et optimiser la gestion des stocks de nos 13 635 unités en réduisant l'espace alloué aux produits de faible valeur."
+               data-lang-en="Regarding the numbers and the business diagnostic, this data cross-referencing reveals an urgent problem in October 2023. The simultaneous drop in sales volume ($42.50) and the halving of the margin rate (34.58%) prove that the company faced either a massive, unforeseen increase in logistics/supplier costs that was not passed on, or an aggressive clearance sale strategy at a loss. To remedy this, it is essential to audit supplier contracts and secure purchase prices. Furthermore, although the UK and USA are our most engaged clients (best loyalty scores and strong median sales), they do not generate more margin than other countries (stuck at 20%). The marketing strategy in these zones must therefore be restructured by pushing higher value-added products, such as premium furniture, and inventory management of our 13,635 units should be optimized by reducing the space allocated to low-value items.">
+                En ce qui concerne les chiffres et le diagnostic business, ce croisement de données révèle un problème urgent en octobre 2023. La baisse simultanée du volume des ventes (42,50 $) et l'effondrement de moitié du taux de marge (34,58 %) prouvent que l'entreprise a fait face soit à une hausse massive et imprévue des coûts logistiques/fournisseurs non répercutée, soit à une politique de déstockage agressive à perte. Pour y remédier, il est indispensable d'auditer les contrats fournisseurs et de sécuriser les prix d'achat. Par ailleurs, bien que le Royaume-Uni et les USA soient nos clients les plus engagés (meilleurs scores de fidélité et fortes ventes médianes), ils ne dégagent pas plus de marge que les autres pays (bloqués à 20 %). Il faut donc revoir la stratégie marketing sur ces zones en poussant des produits à plus forte valeur ajoutée, comme le mobilier premium, et optimiser la gestion des stocks de nos 13 635 unités en réduisant l'espace alloué aux produits de faible valeur.
+            </p>
+        </section>
+
+    </main>
+
+    <div class="copyright">
+        <span>© 2026 Favre Emma's Portfolio</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Emma's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { background-color: #fff !important; }
+        
+        .project-intro-text {
+            max-width: 800px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            padding: 0 20px;
+        }
+
+        .method-section { margin-bottom: 60px; padding-bottom: 40px; border-bottom: 1px solid #f0f0f0; }
+        .tool-title { font-size: 1.4rem; color: #222; margin-bottom: 15px; font-weight: 600; text-align: center; }
+        
+        .project-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            margin: 25px auto;
+            display: block;
+        }
+
+        /* --- STYLE TABLEAU (Structure axiale parfaite) --- */
+        .tableau-section {
+            width: 100% !important;
+            max-width: 1026px !important; 
+            margin: 40px auto !important; 
+            padding: 0 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important; 
+            overflow: hidden !important;
+        }
+        
+        .tableau-container {
+            width: 100% !important;
+            height: 765px !important; 
+            overflow: hidden !important;
+            background: transparent !important;
+            position: relative !important;
+        }
+
+        .tableau-direct-iframe {
+            width: 1140px !important; 
+            height: 850px !important; 
+            border: none !important;
+            display: block !important;
+            margin: 0 auto !important; 
+            transform: scale(0.90) !important; 
+            transform-origin: top center !important; 
+        }
+
+        .back-button {
+            display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px;
+            background-color: #f8f9fa; color: #333; text-decoration: none; border-radius: 50px;
+            font-size: 0.85rem; font-weight: 500; border: 1px solid #eee; transition: all 0.3s ease;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body class="project-page">
+
+    <div class="sidebar left-sidebar">
+        <div class="sidebar-nav">
+            <a href="index.html" class="nav-link" data-lang-fr="ACCUEIL" data-lang-en="HOME">ACCUEIL</a>
+        </div>
+    </div>
+
+    <div class="sidebar right-sidebar">
+        <div class="sidebar-nav">
+            <a href="contact.html" class="nav-link" data-lang-fr="CONTACT" data-lang-en="CONTACT">CONTACT</a>
+            <a href="about-me.html" class="nav-link" data-lang-fr="À PROPOS" data-lang-en="ABOUT ME">À PROPOS</a>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <h1 class="project-case-study-title" style="text-align:center;" data-lang-fr="Dashboard" data-lang-en="Dashboard">Dashboard</h1>
+        <div style="text-align:center;"><a href="skills-analytics.html" class="back-button" data-lang-fr="Retour aux compétences" data-lang-en="Back to skills">Retour aux compétences</a></div>
+
+        <section class="method-section">
+            <div class="project-intro-text">
+                <h3 class="tool-title">Power BI</h3>
+                <p data-lang-fr="Power BI est l'outil que j'apprécie le plus pour la visualisation de données. Dans ce projet, j'ai conçu un dashboard interactif permettant de suivre les ventes et la rentabilité de l'entreprise. J'ai intégré des segments temporels (année et mois) pour comparer facilement les performances au fil du temps, ainsi que des filtres par pays, catégorie de produits et articles. Grâce aux mesures DAX, j'ai calculé des indicateurs clés (revenu, profit, marge, ventes cumulées...) et mis en évidence des tendances ainsi qu'une anomalie importante de rentabilité. L'objectif était de fournir un tableau de bord clair, interactif et utile pour faciliter la prise de décision."
+                   data-lang-en="Power BI is the tool I enjoy the most for data visualization. In this project, I designed an interactive dashboard to track sales and profitability. I integrated time slicers (year and month) for easy performance comparison, along with filters by country, product category, and item. Using DAX measures, I calculated key performance indicators (revenue, profit, margin, cumulative sales...) and highlighted trends as well as a significant profitability anomaly. The goal was to provide a clear, interactive, and useful dashboard to facilitate decision-making.">
+                    Power BI est l'outil que j'apprécie le plus pour la visualisation de données. Dans ce projet, j'ai conçu un dashboard interactif permettant de suivre les ventes et la rentabilité de l'entreprise. J'ai intégré des segments temporels (année et mois) pour comparer facilement les performances au fil du temps, ainsi que des filtres par pays, catégorie de produits et articles. Grâce aux mesures DAX, j'ai calculé des indicateurs clés (revenu, profit, marge, ventes cumulées...) et mis en évidence des tendances ainsi qu'une anomalie importante de rentabilité. L'objectif était de fournir un tableau de bord clair, interactif et utile pour faciliter la prise de décision.
+                </p>
+                <img src="images/dash1.png" alt="Sales" class="project-image">
+                <img src="images/dash2.png" alt="Profit" class="project-image">
+            </div>
+        </section>
+
+        <section class="tableau-section">
+            <div class="project-intro-text">
+                <h3 class="tool-title">Tableau</h3>
+                <p data-lang-fr="Il s'agit du tout premier dashboard que j'ai créé dans le cadre de ma certification Google Data Analyst. Réalisé sur Tableau, j'ai cherché à le rendre le plus interactif possible pour permettre une exploration dynamique des données de santé. Grâce à une modélisation précise, j'ai croisé les volumes de pas et de sommeil par utilisateur, tout en appliquant des filtres intuitifs pour faciliter la lecture des habitudes quotidiennes des utilisateurs d'objets connectés et rendre les insights plus accessibles."
+                   data-lang-en="This is the very first dashboard I created for my Google Data Analyst certification. Built on Tableau, I aimed to make it as interactive as possible for dynamic exploration of health data. Through precise modeling, I crossed step counts and sleep logs per user, applying intuitive filters to facilitate the reading of daily habits of wearable device users and making insights more accessible.">
+                    Il s'agit du tout premier dashboard que j'ai créé dans le cadre de ma certification Google Data Analyst. Réalisé sur Tableau, j'ai cherché à le rendre le plus interactif possible pour permettre une exploration dynamique des données de santé. Grâce à une modélisation précise, j'ai croisé les volumes de pas et de sommeil par utilisateur, tout en appliquant des filtres intuitifs pour faciliter la lecture des habitudes quotidiennes des utilisateurs d'objets connectés et rendre les insights plus accessibles.
+                </p>
+            </div>
+            <div class="tableau-container">
+                <iframe src="https://public.tableau.com/views/BellabeatDashboardGoogleCertificateCapsuleProject/Dashboard1?:showVizHome=no&:embed=true" class="tableau-direct-iframe"></iframe>
+            </div>
+        </section>
+
+        <section class="method-section">
+            <div class="project-intro-text">
+                <h3 class="tool-title">Excel</h3>
+                <p data-lang-fr="Pour ce dernier exemple, j'ai conçu un dashboard interactif sous Excel destiné à analyser la performance d'un centre d'appels sur les six derniers mois. J'ai privilégié une interface sombre et une gestion précise des espaces via des formes et des zones de texte pour un rendu professionnel."
+                   data-lang-en="For this last example, I designed an interactive dashboard in Excel to analyze the performance of a call center over the last six months. I opted for a dark interface and precise spacing using shapes and text boxes for a professional look.">
+                    Pour ce dernier exemple, j'ai conçu un dashboard interactif sous Excel destiné à analyser la performance d'un centre d'appels sur les six derniers mois. J'ai privilégié une interface sombre et une gestion précise des espaces via des formes et des zones de texte pour un rendu professionnel.
+                </p>
+                <img src="images/dashboard excel.png" alt="Dashboard Excel" class="project-image">
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

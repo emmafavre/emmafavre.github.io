@@ -1,42 +1,85 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- Script pour les modales "OTHER SKILLS" et "SOFT SKILLS" ---
-    const otherSkillsLink = document.getElementById('toggle-other-skills');
-    const otherSkillsModal = document.getElementById('other-skills-modal');
+    // ==========================================
+    // 🌍 GESTION DE LA LANGUE (AVEC MÉMOIRE)
+    // ==========================================
+    const langModal = document.getElementById("language-modal");
+    const btnFr = document.getElementById("btn-fr");
+    const btnEn = document.getElementById("btn-en");
+
+    function applyLanguage(lang) {
+        document.documentElement.lang = lang;
+        const elementsToTranslate = document.querySelectorAll('[data-lang-fr]');
+        elementsToTranslate.forEach(el => {
+            if (lang === 'fr') {
+                el.innerHTML = el.getAttribute('data-lang-fr');
+            } else {
+                el.innerHTML = el.getAttribute('data-lang-en');
+            }
+        });
+        localStorage.setItem('portfolio-lang', lang);
+        if (langModal) langModal.style.display = "none";
+    }
+
+    const savedLang = localStorage.getItem('portfolio-lang');
+    if (savedLang) {
+        applyLanguage(savedLang);
+    } else if (langModal) {
+        langModal.style.display = "flex";
+    }
+
+    if (btnFr) btnFr.addEventListener("click", () => applyLanguage("fr"));
+    if (btnEn) btnEn.addEventListener("click", () => applyLanguage("en"));
+
+
+    // ==========================================
+    // 📂 GESTION GÉNÉRALE DES MODALES
+    // ==========================================
     
-    const softSkillsLink = document.getElementById('toggle-soft-skills');
-    const softSkillsModal = document.getElementById('soft-skills-modal');
-    
+    // Fonction pour fermer TOUTES les modales existantes sur la page
     const closeAllModals = () => {
-        otherSkillsModal.style.display = 'none';
-        softSkillsModal.style.display = 'none';
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.style.display = 'none';
+        });
+        document.body.style.overflow = 'auto'; // Réactive le scroll
     };
 
-    const openModal = (modalElement) => {
-        closeAllModals(); // Ferme les autres modales avant d'ouvrir la nouvelle
-        modalElement.style.display = 'block';
-    };
-
-    if (otherSkillsLink && otherSkillsModal) {
-        otherSkillsLink.addEventListener('click', (event) => {
-            event.preventDefault();
-            openModal(otherSkillsModal);
-        });
-    }
-
-    if (softSkillsLink && softSkillsModal) {
-        softSkillsLink.addEventListener('click', (event) => {
-            event.preventDefault();
-            openModal(softSkillsModal);
-        });
-    }
-
-    document.querySelectorAll('.close-button').forEach(button => {
-        button.addEventListener('click', () => {
+    // Fonction pour ouvrir une modale spécifique
+    const openModal = (modalId) => {
+        const modalElement = document.getElementById(modalId);
+        if (modalElement) {
             closeAllModals();
-        });
+            modalElement.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Bloque le scroll
+        }
+    };
+
+    // Mapping des boutons vers leurs IDs de modales respectives
+    const modalMap = [
+        { btn: 'toggle-other-skills', modal: 'other-skills-modal' },
+        { btn: 'toggle-soft-skills', modal: 'soft-skills-modal' },
+        { btn: 'toggle-cv', modal: 'cv-modal' },
+        { btn: 'toggle-cover-letter', modal: 'cover-letter-modal' },
+        { btn: 'toggle-certificates', modal: 'certificates-modal' },
+        { btn: 'toggle-experiences', modal: 'experiences-modal' }
+    ];
+
+    modalMap.forEach(item => {
+        const btn = document.getElementById(item.btn);
+        if (btn) {
+            btn.addEventListener('click', (event) => {
+                event.preventDefault();
+                openModal(item.modal);
+            });
+        }
     });
 
+    // Fermeture par bouton X
+    document.querySelectorAll('.close-button').forEach(button => {
+        button.addEventListener('click', closeAllModals);
+    });
+
+    // Fermeture par clic extérieur
     window.addEventListener('click', (event) => {
         if (event.target.classList.contains('modal')) {
             closeAllModals();
@@ -44,43 +87,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // --- Script pour l'envoi du formulaire de contact (AJOUTÉ) ---
+    // ==========================================
+    // ✉️ FORMULAIRE DE CONTACT
+    // ==========================================
     const form = document.getElementById('contact-form');
     const formStatus = document.getElementById('form-status');
 
     if (form) {
         form.addEventListener('submit', async function(event) {
             event.preventDefault();
-
             const data = new FormData(event.target);
-            
             try {
                 const response = await fetch(event.target.action, {
                     method: form.method,
                     body: data,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
+                    headers: { 'Accept': 'application/json' }
                 });
 
                 if (response.ok) {
                     form.style.display = 'none';
-                    formStatus.textContent = "Your message has been sent successfully! Thank you.";
+                    const currentLang = document.documentElement.lang || "en";
+                    formStatus.textContent = (currentLang === "fr") ? "Votre message a été envoyé avec succès !" : "Message sent successfully!";
                     formStatus.classList.remove('hidden');
-                    formStatus.classList.add('success-message');
                 } else {
-                    response.json().then(data => {
-                        if (Object.hasOwn(data, 'errors')) {
-                            formStatus.textContent = data["errors"].map(error => error["message"]).join(", ");
-                        } else {
-                            formStatus.textContent = "Oops! There was a problem submitting your form. Please try again later.";
-                        }
-                    });
+                    formStatus.textContent = "Oops! Error.";
                 }
             } catch (error) {
-                formStatus.textContent = "Oops! An error occurred. Please check your internet connection and try again.";
+                formStatus.textContent = "Network error.";
             }
         });
     }
-
 });

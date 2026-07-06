@@ -1,25 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insurance Fraud Detection - Project 1</title>
+    <title>Projet 1 - Détection de Fraudes à l'Assurance</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
             background-color: #fff !important;
         }
-        /* Style additionnel pour les graphiques si tu les ajoutes plus tard */
-        .project-image-container {
+        /* Espace supplémentaire pour décoller la première section du titre principal */
+        .first-section {
+            margin-top: 50px !important; 
+        }
+        /* Style pour le bouton rapport */
+        .report-info-container {
             text-align: center;
             margin: 20px 0;
         }
+        .document-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        /* Style pour le tableau des outils et données */
+        .tools-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0 10px 0;
+            font-size: 0.95rem;
+        }
+        .tools-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .tools-table td:first-child {
+            font-weight: 600;
+            width: 30%;
+            color: #333;
+            letter-spacing: 0.5px;
+        }
+        .tools-table td:last-child {
+            color: #666;
+        }
+        /* Style pour harmoniser l'affichage de vos captures d'écran */
         .project-image {
             max-width: 100%;
             height: auto;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            margin: 25px auto;
+            display: block;
+        }
+        /* Conteneur pour aligner proprement les trois images sur Desktop */
+        .project-images-flex {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin: 25px 0;
+        }
+        @media (min-width: 768px) {
+            .project-images-flex {
+                flex-direction: row;
+                justify-content: center;
+                align-items: stretch;
+            }
+            .project-images-flex .project-image {
+                flex: 1;
+                margin: 0;
+                max-width: 31%;
+                object-fit: contain;
+            }
         }
     </style>
 </head>
@@ -27,38 +83,119 @@
 
     <div class="sidebar left-sidebar">
         <div class="sidebar-nav">
-            <a href="index.html" class="nav-link">HOME</a>
+            <a href="index.html" class="nav-link" data-lang-fr="ACCUEIL" data-lang-en="HOME">HOME</a>
         </div>
     </div>
 
     <div class="sidebar right-sidebar">
         <div class="sidebar-nav">
-            <a href="contact.html" class="nav-link">CONTACT</a>
-            <a href="about-me.html" class="nav-link">ABOUT ME</a>
+            <a href="contact.html" class="nav-link" data-lang-fr="CONTACT" data-lang-en="CONTACT">CONTACT</a>
+            <a href="about-me.html" class="nav-link" data-lang-fr="À PROPOS" data-lang-en="ABOUT ME">ABOUT ME</a>
         </div>
     </div>
 
     <main class="main-content">
-        <h1 class="project-case-study-title nav-link"> Insurance Fraud Detection System</h1>
+
+        <h1 class="project-case-study-title" 
+            data-lang-fr="Projet Data Science – Détection de Fraudes dans le Domaine de l'Assurance" 
+            data-lang-en="Data Science Project – Insurance Fraud Detection System">
+            Insurance Fraud Detection System
+        </h1>
+
+        <section class="project-intro-text first-section">
+            <h2 class="section-title" data-lang-fr="RÉSUMÉ & OBJECTIF" data-lang-en="SUMMARY & OBJECTIVE">RÉSUMÉ & OBJECTIF</h2>
+            <p data-lang-fr="J'ai développé ce projet au cours de la première année de mon Master. Représentant ma toute première expérience dans le domaine de la data analytics, il marque ma transition entre la théorie fondamentale et l'application réelle. L'objectif principal était d'aider une société d'assurance à identifier et prédire les déclarations de sinistres frauduleuses à haut risque. En analysant un jeu de données de 1 100 déclarations d'accidents, j'ai structuré un processus complet allant des tests statistiques aux algorithmes de machine learning pour concevoir un système capable de signaler les comportements suspects, aidant ainsi l'entreprise à optimiser son processus de révision manuelle."
+               data-lang-en="I developed this project during the first year of my Master's degree. Representing my very first experience in data analytics, it marks my transition from foundational theory to real-world application. The main objective was to help an insurance company identify and predict high-risk fraudulent claims. By analyzing a dataset of 1,100 accident claims, I structured a complete pipeline from statistical tests to machine learning algorithms to design a system capable of flagging suspicious behaviors, thereby helping the company optimize its manual review process.">
+                J'ai développé ce projet au cours de la première année de mon Master. Représentant ma toute première expérience dans le domaine de la data analytics, il marque ma transition entre la théorie fondamentale et l'application réelle. L'objectif principal était d'aider une société d'assurance à identifier et prédire les déclarations de sinistres frauduleuses à haut risque. En analysant un jeu de données de 1 100 déclarations d'accidents, j'ai structuré un processus complet allant des tests statistiques aux algorithmes de machine learning pour concevoir un système capable de signaler les comportements suspects, aidant ainsi l'entreprise à optimiser son processus de révision manuelle.
+            </p>
+        </section>
+
+        <div class="report-info-container">
+            <a href="Rapport de projet.pdf" target="_blank" class="document-button" data-lang-fr="VOIR LE RAPPORT COMPLET" data-lang-en="VIEW FULL REPORT">VOIR LE RAPPORT COMPLET</a>
+        </div>
 
         <section class="project-intro-text">
-            <h2 class="section-title nav-link">SUMMARY</h2>
-            <p>
-                I developed this project during the first year of my Master’s degree. As my very first foray into the field of data analytics, it represents my transition from foundational theory to real-world application. The goal was to assist an insurance provider in identifying high-risk fraudulent claims. By analyzing a dataset of 1,100 declarations, I applied statistical testing and machine learning algorithms to build a system capable of flagging suspicious behavior, helping the company optimize its manual review process. The full report is written in French.
+            <h2 class="section-title" data-lang-fr="OUTILS & TECHNOLOGIES" data-lang-en="TOOLS & TECHNOLOGIES">OUTILS & TECHNOLOGIES</h2>
+            <table class="tools-table">
+                <tr>
+                    <td data-lang-fr="Plateforme" data-lang-en="Platform">Plateforme</td>
+                    <td>RStudio (Environnement R)</td>
+                </tr>
+                <tr>
+                    <td data-lang-fr="Codes & Langages" data-lang-en="Codes & Languages">Codes & Langages</td>
+                    <td>Langage R</td>
+                </tr>
+                <tr>
+                    <td data-lang-fr="Librairies & Outils" data-lang-en="Libraries & Tools">Librairies & Outils</td>
+                    <td>readr, dplyr, ggplot2, stringr, C5.0, stats (K-means)</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="project-intro-text">
+            <h2 class="section-title" data-lang-fr="LES ENSEMBLES DE DONNÉES" data-lang-en="THE DATASETS">LES ENSEMBLES DE DONNÉES</h2>
+            <p data-lang-fr="L'étude repose sur deux fichiers distincts contenant 12 variables financières, temporelles et démographiques (telles que l'âge, le montant des dégâts, le délai écoulé depuis l'accident ou la présence d'un rapport de police) :"
+               data-lang-en="The study relies on two distinct files containing 12 financial, temporal, and demographic variables (such as age, claim amount, days to incident, or the presence of a police report):">
+                L'étude repose sur deux fichiers distincts contenant 12 variables financières, temporelles et démographiques (telles que l'âge, le montant des dégâts, le délai écoulé depuis l'accident ou la présence d'un rapport de police) :
             </p>
-            <div class="report-info-container">
-                <a href="Rapport de projet.pdf" target="_blank" class="document-button">VIEW FULL REPORT</a>
-                <div class="tooltip-container">
-                    <i class="fas fa-tools info-icon"></i>
-                    <span class="info-text">Tools used</span>
-                    <span class="tooltip-text">I used R for data cleaning, statistical testing (Chi-square), and Machine Learning (C5.0 Decision Trees).</span>
-                </div>
+            <table class="tools-table">
+                <tr>
+                    <td data-lang-fr="Data Projet 1.csv" data-lang-en="Data Projet 1.csv">Data Projet 1.csv</td>
+                    <td data-lang-fr="1 100 instances avec classe connue (FRAUDULENT : Yes / No) pour l'apprentissage et le test." data-lang-en="1,100 instances with known class (FRAUDULENT: Yes / No) for training and testing.">1 100 instances avec classe connue (FRAUDULENT : Yes / No) pour l'apprentissage et le test.</td>
+                </tr>
+                <tr>
+                    <td data-lang-fr="Data_Projet_1_New.csv" data-lang-en="Data_Projet_1_New.csv">Data_Projet_1_New.csv</td>
+                    <td data-lang-fr="200 nouvelles déclarations à prédire (classe inconnue) pour le déploiement business." data-lang-en="200 new claims to predict (unknown class) for business deployment.">200 nouvelles déclarations à prédire (classe inconnue) pour le déploiement business.</td>
+                </tr>
+            </table>
+            
+            <img src="images/dico.png" alt="Dictionnaire des données du projet" class="project-image">
+        </section>
+
+        <section class="project-intro-text">
+            <h2 class="section-title" data-lang-fr="EXPLORATION & PRÉ-TRAITEMENT" data-lang-en="EXPLORATION & PRE-PROCESSING">EXPLORATION & PRÉ-TRAITEMENT</h2>
+            <p data-lang-fr="La première phase a consisté à analyser la structure du jeu de données (via str() et summary()). J'ai utilisé la bibliothèque stringr pour uniformiser les en-têtes en majuscules. Afin de ne retenir que les variables les plus prédictives, j'ai mené des tests d'indépendance du Chi-2 et de Fisher. Ces tests ont révélé que les variables POLICE_REPORT et CLAIM_TYPE présentaient des p-values très faibles (< 0.05), prouvant leur lien fort avec la fraude. À l'inverse, des variables comme GENDER, CLAIM_AREA ou INCIDENT_CAUSE n'affichaient aucune corrélation significative et ont été exclues pour optimiser les performances futures de l'arbre de décision, tout comme les identifiants techniques (CLAIM_ID, CUSTOMER_ID)."
+               data-lang-en="The first phase consisted of analyzing the dataset structure (using str() and summary()). I used the stringr library to standardize headers to uppercase. To retain only the most predictive variables, I conducted Chi-Square and Fisher independence tests. These tests revealed that POLICE_REPORT and CLAIM_TYPE had very low p-values (< 0.05), proving their strong link to fraud. Conversely, variables like GENDER, CLAIM_AREA or INCIDENT_CAUSE showed no significant correlation and were excluded to optimize future decision tree performance, along with technical IDs (CLAIM_ID, CUSTOMER_ID).">
+                La première phase a consisté à analyser la structure du jeu de données (via str() et summary()). J'ai utilisé la bibliothèque stringr pour uniformiser les en-têtes en majuscules. Afin de ne retenir que les variables les plus prédictives, j'ai mené des tests d'indépendance du Chi-2 et de Fisher. Ces tests ont révélé que les variables POLICE_REPORT et CLAIM_TYPE présentaient des p-values très faibles (&lt; 0.05), prouvant leur lien fort avec la fraude. À l'inverse, des variables comme GENDER, CLAIM_AREA ou INCIDENT_CAUSE n'affichaient aucune corrélation significative et ont été exclues pour optimiser les performances futures de l'arbre de décision, tout comme les identifiants techniques (CLAIM_ID, CUSTOMER_ID).
+            </p>
+        </section>
+
+        <section class="project-intro-text">
+            <h2 class="section-title" data-lang-fr="SEGMENTATION NON SUPERVISÉE (CLUSTERING)" data-lang-en="UNSUPERVISED SEGMENTATION (CLUSTERING)">SEGMENTATION NON SUPERVISÉE (CLUSTERING)</h2>
+            <p data-lang-fr="Avant la phase prédictive, j'ai appliqué l'algorithme des K-means pour explorer des sous-groupes homogènes de clients. En fixant K = 4 clusters, le modèle a mis en évidence des typologies comportementales claires. Notamment, le Cluster 3 s'est avéré particulièrement remarquable car il regroupait exclusivement des déclarations frauduleuses (100% de taux de fraude sur ce sous-groupe), permettant d'isoler des caractéristiques communes et hautement suspectes chez ces assurés."
+               data-lang-en="Prior to the predictive phase, I applied the K-means algorithm to explore homogeneous customer subgroups. By setting K = 4 clusters, the model highlighted clear behavioral typologies. Notably, Cluster 3 proved to be particularly remarkable as it exclusively grouped fraudulent claims (100% fraud rate in this subgroup), making it possible to isolate common and highly suspicious characteristics among these policyholders.">
+                Avant la phase prédictive, j'ai appliqué l'algorithme des K-means pour explorer des sous-groupes homogènes de clients. En fixant K = 4 clusters, le modèle a mis en évidence des typologies comportementales claires. Notamment, le Cluster 3 s'est avéré particulièrement remarquable car il regroupait exclusivement des déclarations frauduleuses (100% de taux de fraude sur ce sous-groupe), permettant d'isoler des caractéristiques communes et hautement suspectes chez ces assurés.
+            </p>
+        </section>
+
+        <section class="project-intro-text">
+            <h2 class="section-title" data-lang-fr="MODÉLISATION & SÉLECTION DU CLASSIFIEUR" data-lang-en="MODELING & CLASSIFIER SELECTION">MODÉLISATION & SÉLECTION DU CLASSIFIEUR</h2>
+            <p data-lang-fr="Pour construire le système prédictif, j'ai partitionné les données en ensembles d'apprentissage et de test, puis généré et comparé plusieurs configurations d'arbres de décision. Le modèle final sélectionné a été l'arbre tree2 (basé sur l'algorithme C5.0), qui a obtenu le meilleur taux de succès global (82% à 84% de précision selon les critères d'évaluation). Ce classifieur a ensuite été appliqué sur les 200 nouvelles déclarations anonymes, aboutissant à la prédiction de 192 cas légitimes et 8 cas frauduleux à haut risque, exportés dans un fichier de résultats structuré."
+               data-lang-en="To build the predictive system, I partitioned the data into training and testing sets, then generated and compared several decision tree configurations. The final selected model was the tree2 model (based on the C5.0 algorithm), which achieved the best overall success rate (82% to 84% accuracy depending on the evaluation criteria). This classifier was then deployed on the 200 new anonymous claims, resulting in the prediction of 192 legitimate cases and 8 high-risk fraudulent cases, export into a structured results file.">
+                Pour construire le système prédictif, j'ai partitionné les données en ensembles d'apprentissage et de test, puis généré et comparé plusieurs configurations d'arbres de décision. Le modèle final sélectionné a été l'arbre tree2 (basé sur l'algorithme C5.0), qui a obtenu le meilleur taux de succès global (82% à 84% de précision selon les critères d'évaluation). Ce classifieur a ensuite été appliqué sur les 200 nouvelles déclarations anonymes, aboutissant à la prédiction de 192 cas légitimes et 8 cas frauduleux à haut risque, exportés dans un fichier de résultats structuré.
+            </p>
+            
+            <div class="project-images-flex">
+                <img src="images/tree2.png" alt="Structure de l'arbre de décision tree2" class="project-image">
+                <img src="images/matriceconfu.png" alt="Matrice de confusion du modèle" class="project-image">
+                <img src="images/succes.png" alt="Taux de succès et métriques d'évaluation" class="project-image">
             </div>
         </section>
+
+        <section class="project-intro-text">
+            <h2 class="section-title" data-lang-fr="REMISE EN QUESTION & DIAGNOSTIC" data-lang-en="SELF-CRITIQUE & DIAGNOSTIC">REMISE EN QUESTION & DIAGNOSTIC</h2>
+            <p data-lang-fr="Avec le recul et l'expérience acquise, la note finale de 14/20 obtenue pour ce projet met en lumière plusieurs limites techniques et méthodologiques importantes qu'il convient d'analyser :<br><br>1. <b>Le piège du déséquilibre des classes (Class Imbalance) :</b> Le jeu de données initial est fortement déséquilibré, comptant 846 déclarations non frauduleuses pour seulement 254 cas frauduleux. Avec un tel déséquilibre, un modèle naïf qui prédirait systématiquement 'No' obtiendrait mécaniquement environ 77% de taux de succès. Notre performance de 82-84%, bien que supérieure, reste donc relativement faible en gain réel. Lors de la prédiction des 200 nouvelles instances, le modèle n'a détecté que 8 fraudes (soit 4%), signe d'un fort biais conservateur.<br><br>2. <b>Une mauvaise gestion des Faux Négatifs face aux enjeux financiers :</b> L'objectif métier fixé par le commanditaire était de minimiser les risques financiers en évitant à tout prix de classer un sinistre réellement frauduleux comme légitime (Faux Négatifs). Or, l'analyse approfondie de la matrice de confusion montre que le modèle a eu tendance à maximiser l'exactitude globale au détriment du Rappel (Sensibilité) de la classe minoritaire. Pour une application industrielle, il aurait fallu intégrer une <i>matrice des coûts</i> asymétrique ou appliquer des techniques de rééchantillonnage (SMOTE, downsampling) pour forcer l'arbre à traquer les fraudes plus agressivement.<br><br>3. <b>Difficultés techniques et graphiques :</b> La phase de modélisation a été freinée par des limitations sur l'environnement R, notamment l'erreur récurrente <code>Error in plot.new() : figure margins too large</code> lors de l'affichage des arbres de décision, m'obligeant à modifier manuellement les paramètres graphiques (<code>par(mar=...)</code>) à chaque exécution, altérant la fluidité de l'exploration visuelle."
+               data-lang-en="Looking back with more experience, the final grade of 14/20 obtained for this project highlights several important technical and methodological limitations that warrant analysis:<br><br>1. <b>The Class Imbalance Trap:</b> The initial dataset is highly skewed, containing 846 non-fraudulent claims against only 254 fraudulent ones. With such an imbalance, a naive model predicting 'No' every time would mechanically reach a ~77% success rate. Our performance of 82-84%, while better, represents a relatively small incremental gain. When predicting the 200 new instances, the model tagged only 8 frauds (4%), indicating a strong conservative bias.<br><br>2. <b>Poor False Negative Management Relative to Financial Stakes:</b> The business goal was to minimize financial exposure by avoiding at all costs labeling an actual fraudulent claim as legitimate (False Negatives). However, a deep dive into the confusion matrix shows that the model maximized overall accuracy at the expense of Recall (Sensitivity) for the minority class. For an industrial deployment, implementing an asymmetric <i>cost matrix</i> or resampling techniques (SMOTE, downsampling) would have been mandatory to force the tree to spot frauds more aggressively.<br><br>3. <b>Technical and Graphical Obstacles:</b> The modeling phase faced environment limitations in R, particularly the recurring error <code>Error in plot.new(): figure margins too large</code> when rendering decision trees, requiring manual overrides of graphical parameters (<code>par(mar=...)</code>) before each plot, hindering smooth visual exploration.">
+                Avec le recul et l'expérience acquise, la note finale de 14/20 obtenue pour ce projet met en lumière plusieurs limites techniques et méthodologiques importantes qu'il convient d'analyser :<br><br>1. <b>Le piège du déséquilibre des classes (Class Imbalance) :</b> Le jeu de données initial est fortement déséquilibré, comptant 846 déclarations non frauduleuses pour seulement 254 cas frauduleux. Avec un tel déséquilibre, un modèle naïf qui prédirait systématiquement 'No' obtiendrait mécaniquement environ 77% de taux de succès. Notre performance de 82-84%, bien que supérieure, reste donc relativement faible en gain réel. Lors de la prédiction des 200 nouvelles instances, le modèle n'a détecté que 8 fraudes (soit 4%), signe d'un fort biais conservateur.<br><br>2. <b>Une mauvaise gestion des Faux Négatifs face aux enjeux financiers :</b> L'objectif métier fixé par le commanditaire était de minimiser les risques financiers en évitant à tout prix de classer un sinistre réellement frauduleux comme légitime (Faux Négatifs). Or, l'analyse approfondie de la matrice de confusion montre que le modèle a eu tendance à maximiser l'exactitude globale au détriment du Rappel (Sensibilité) de la classe minoritaire. Pour une application industrielle, il aurait fallu intégrer une <i>matrice des coûts</i> asymétrique ou appliquer des techniques de rééchantillonnage (SMOTE, downsampling) pour forcer l'arbre à traquer les fraudes plus agressivement.<br><br>3. <b>Difficultés techniques et graphiques :</b> La phase de modélisation a été freinée par des limitations sur l'environnement R, notamment l'erreur récurrente <code>Error in plot.new() : figure margins too large</code> lors de l'affichage des arbres de décision, m'obligeant à modifier manuellement les paramètres graphiques (<code>par(mar=...)</code>) à chaque exécution, altérant la fluidité de l'exploration visuelle.
+            </p>
+        </section>
+
+    </main>
 
     <div class="copyright">
         <span>© 2026 Favre Emma's Portfolio</span>
     </div>
 
+    <script src="script.js"></script>
 </body>
 </html>

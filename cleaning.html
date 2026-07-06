@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le nettoyage de données - Emma's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body { background-color: #fff !important; }
+        .main-content { margin-top: 50px; }
+        .method-section { margin-bottom: 45px; padding-bottom: 25px; border-bottom: 1px solid #f0f0f0; }
+        .method-section:last-of-type { border-bottom: none; }
+        .tool-title { font-size: 1.4rem; color: #222; margin-bottom: 15px; font-weight: 600; display: flex; align-items: center; gap: 10px; }
+        .tool-title i { color: #555; font-size: 1.2rem; }
+        .cleaning-image { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin: 20px auto; display: block; }
+        .intro-p { margin-bottom: 40px; line-height: 1.6; color: #444; }
+        .back-button {
+            display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px;
+            background-color: #f8f9fa; color: #333; text-decoration: none; border-radius: 50px;
+            font-size: 0.85rem; font-weight: 500; border: 1px solid #eee; transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+        .back-button:hover { background-color: #333; color: #fff; transform: translateX(-5px); }
+        .data-dict { margin: 10px 0; padding-left: 20px; line-height: 1.4; color: #444; font-size: 0.9rem; }
+        .data-dict li { margin-bottom: 5px; }
+        .r-images-container { display: flex; justify-content: center; gap: 30px; margin-top: 20px; flex-wrap: wrap; }
+        .r-image-box { text-align: center; max-width: 45%; }
+        .r-image-box figcaption { font-size: 0.9rem; color: #666; font-style: italic; margin-top: 10px; }
+    </style>
+</head>
+<body class="project-page">
+
+    <div class="sidebar left-sidebar">
+        <div class="sidebar-nav">
+            <a href="index.html" class="nav-link" data-lang-fr="ACCUEIL" data-lang-en="HOME">HOME</a>
+        </div>
+    </div>
+
+    <div class="sidebar right-sidebar">
+        <div class="sidebar-nav">
+            <a href="contact.html" class="nav-link" data-lang-fr="CONTACT" data-lang-en="CONTACT">CONTACT</a>
+            <a href="about-me.html" class="nav-link" data-lang-fr="À PROPOS" data-lang-en="ABOUT ME">ABOUT ME</a>
+        </div>
+    </div>
+
+    <main class="main-content">
+
+        <h1 class="project-case-study-title" data-lang-fr="Le nettoyage de données" data-lang-en="Data Cleaning">Le nettoyage de données</h1>
+        
+        <div>
+            <a href="skills-analytics.html" class="back-button" data-lang-fr="Retour aux compétences" data-lang-en="Back to skills">
+                <i class="fas fa-arrow-left"></i> Retour aux compétences
+            </a>
+        </div>
+
+        <section class="project-intro-text">
+            <p class="intro-p" data-lang-fr="Le nettoyage de données est l'étape la plus cruciale de tout projet analytique. Il consiste à détecter, corriger ou supprimer les données incorrectes, corrompues, mal formatées, en double ou incomplètes au sein d'un jeu de données. Des données propres garantissent la précision des modèles prédictifs et la fiabilité des décisions business." 
+               data-lang-en="Data cleaning is the most crucial step in any analytical project. It involves detecting, correcting, or removing incorrect, corrupted, poorly formatted, duplicate, or incomplete data within a dataset. Clean data ensures the accuracy of predictive models and the reliability of business decisions.">
+               Le nettoyage de données est l'étape la plus cruciale de tout projet analytique. Il consiste à détecter, corriger ou supprimer les données incorrectes, corrompues, mal formatées, en double ou incomplètes au sein d'un jeu de données. Des données propres garantissent la précision des modèles prédictifs et la fiabilité des décisions business.
+            </p>
+        </section>
+
+        <section class="project-intro-text method-section">
+            <h3 class="tool-title" style="display: block;">1. Microsoft Excel</h3>
+            <h4 style="font-size: 1.1rem; color: #555; margin-bottom: 10px;">Dataset ‘Sales’</h4>
+            <p data-lang-fr="Dans cet exemple, je suis partie d’un fichier de données de ventes brut présentant plusieurs incohérences de formatage et de saisie. L’objectif était de rendre cette base de données fiable afin de la rendre exploitable pour une analyse précise des performances commerciales."
+               data-lang-en="In this example, I started from a raw sales data file with several formatting and input inconsistencies. The goal was to make this database reliable to ensure it could be used for accurate analysis of commercial performance.">
+               Dans cet exemple, je suis partie d’un fichier de données de ventes brut présentant plusieurs incohérences de formatage et de saisie. L’objectif était de rendre cette base de données fiable afin de la rendre exploitable pour une analyse précise des performances commerciales.
+            </p>
+            <p data-lang-fr="Dès l'ouverture du fichier, j'ai constaté que les données étaient configurées selon des standards américains (points au lieu de virgules, formats de date erronés), ce qui empêchait Excel de traiter correctement les montants et les périodes. J'ai donc d'abord procédé à une harmonisation globale des formats régionaux pour garantir la justesse des futurs calculs."
+               data-lang-en="Upon opening the file, I noticed the data was configured according to American standards (dots instead of commas, incorrect date formats), which prevented Excel from correctly processing amounts and periods. I therefore first performed a global harmonization of regional formats to ensure the accuracy of future calculations.">
+               Dès l'ouverture du fichier, j'ai constaté que les données étaient configurées selon des standards américains (points au lieu de virgules, formats de date erronés), ce qui empêchait Excel de traiter correctement les montants et les périodes. J'ai donc d'abord procédé à une harmonisation globale des formats régionaux pour garantir la justesse des futurs calculs.
+            </p>
+            <p data-lang-fr="J’ai procédé ensuite au nettoyage des données : j’ai d’abord remplacé les cellules vides par des valeurs par défaut (notamment 0 pour les unités vendues) afin d'éviter toute erreur de calcul ; puis, j’ai harmonisé les entrées textuelles incohérentes (comme le remplacement de 'six hundred' par 600) et supprimé les enregistrements contenant des erreurs techniques ou des doublons, afin d'assurer l'unicité de chaque ligne ; enfin, j’ai ajusté manuellement la structure du tableau (largeurs de colonnes, mise en forme des en-têtes) et appliqué des formats de nombres personnalisés pour que les données restent lisibles, en affichant les décimales uniquement lorsque c'est nécessaire."
+               data-lang-en="I then proceeded to clean the data: I replaced empty cells with default values (notably 0 for units sold) to avoid calculation errors; then, I harmonized inconsistent textual entries (such as replacing 'six hundred' with 600) and removed records containing technical errors or duplicates, to ensure the uniqueness of each row; finally, I manually adjusted the table structure (column widths, header formatting) and applied custom number formats to keep the data readable, displaying decimals only when necessary.">
+               J’ai procédé ensuite au nettoyage des données : j’ai d’abord remplacé les cellules vides par des valeurs par défaut (notamment 0 pour les unités vendues) afin d'éviter toute erreur de calcul ; puis, j’ai harmonisé les entrées textuelles incohérentes (comme le remplacement de "six hundred" par 600) et supprimé les enregistrements contenant des erreurs techniques ou des doublons, afin d'assurer l'unicité de chaque ligne ; enfin, j’ai ajusté manuellement la structure du tableau (largeurs de colonnes, mise en forme des en-têtes) et appliqué des formats de nombres personnalisés pour que les données restent lisibles, en affichant les décimales uniquement lorsque c'est nécessaire.
+            </p>
+
+            <figure style="text-align: center; margin: 20px 0;">
+                <img src="images/sale.png" alt="Données avant nettoyage" class="cleaning-image">
+                <figcaption data-lang-fr="Données avant nettoyage" data-lang-en="Data before cleaning">Données avant nettoyage</figcaption>
+            </figure>
+
+            <figure style="text-align: center; margin: 20px 0;">
+                <img src="images/propre.png" alt="Données après nettoyage" class="cleaning-image">
+                <figcaption data-lang-fr="Données après nettoyage" data-lang-en="Data after cleaning">Données après nettoyage</figcaption>
+            </figure>
+        </section>
+
+        <section class="project-intro-text method-section">
+            <h3 class="tool-title" style="display: block;">2. SQL (SQL Server Management Studio)</h3>
+            <h4 style="font-size: 1.1rem; color: #555; margin-bottom: 10px;">Netflix</h4>
+            <p data-lang-fr="Pour ce projet, j’ai analysé un jeu de données extrait de Kaggle recensant le catalogue Netflix (8 790 entrées). Ce dataset offre une vision complète de l'évolution de la plateforme, avec des contenus allant des classiques de 1925 aux productions récentes de 2021."
+               data-lang-en="For this project, I analyzed a dataset extracted from Kaggle listing the Netflix catalog (8,790 entries). This dataset offers a complete vision of the platform's evolution, with content ranging from 1925 classics to recent 2021 productions.">
+               Pour ce projet, j’ai analysé un jeu de données extrait de Kaggle recensant le catalogue Netflix (8 790 entrées). Ce dataset offre une vision complète de l'évolution de la plateforme, avec des contenus allant des classiques de 1925 aux productions récentes de 2021.
+            </p>
+            <p data-lang-fr="Il permet d’étudier une grande diversité de programmes (films et séries) provenant du monde entier et couvrant de multiples genres, tels que les drames, les documentaires, l'action ou encore les thrillers."
+               data-lang-en="It allows for the study of a great diversity of programs (films and series) from around the world covering multiple genres, such as dramas, documentaries, action, and thrillers.">
+               Il permet d’étudier une grande diversité de programmes (films et séries) provenant du monde entier et couvrant de multiples genres, tels que les drames, les documentaires, l'action ou encore les thrillers.
+            </p>
+            <p style="margin-bottom: 5px;"><strong>Dictionnaire des variables :</strong></p>
+            <ul class="data-dict">
+                <li><strong>Type :</strong> <span data-lang-fr="Catégorisation du contenu (Film ou Série)." data-lang-en="Content categorization (Movie or Series).">Catégorisation du contenu (Film ou Série).</span></li>
+                <li><strong>Title :</strong> <span data-lang-fr="Titre de l'œuvre." data-lang-en="Title of the work.">Titre de l'œuvre.</span></li>
+                <li><strong>Director/Creator :</strong> <span data-lang-fr="Nom du réalisateur (film) ou du créateur (série)." data-lang-en="Name of director (movie) or creator (series).">Nom du réalisateur (film) ou du créateur (série).</span></li>
+                <li><strong>Country :</strong> <span data-lang-fr="Pays de production." data-lang-en="Country of production.">Pays de production.</span></li>
+                <li><strong>Release Date :</strong> <span data-lang-fr="Date officielle d'ajout au catalogue Netflix." data-lang-en="Official date added to the Netflix catalog.">Date officielle d'ajout au catalogue Netflix.</span></li>
+                <li><strong>Release Year :</strong> <span data-lang-fr="Année de sortie initiale." data-lang-en="Initial release year.">Année de sortie initiale.</span></li>
+                <li><strong>Rating :</strong> <span data-lang-fr="Classification par âge (ex: TV-MA, PG-13, R...), indiquant l'adéquation du contenu selon le public." data-lang-en="Age rating (e.g., TV-MA, PG-13, R...), indicating content suitability for the audience.">Classification par âge (ex: TV-MA, PG-13, R...), indiquant l'adéquation du contenu selon le public.</span></li>
+                <li><strong>Duration :</strong> <span data-lang-fr="Durée du contenu (en minutes pour les films, en nombre de saisons pour les séries)." data-lang-en="Duration of content (in minutes for movies, in number of seasons for series).">Durée du contenu (en minutes pour les films, en nombre de saisons pour les séries).</span></li>
+                <li><strong>Genres :</strong> <span data-lang-fr="Catégories thématiques permettant une segmentation précise du catalogue." data-lang-en="Thematic categories allowing precise catalog segmentation.">Catégories thématiques permettant une segmentation précise du catalogue.</span></li>
+            </ul>
+            <img src="images/sqlbrut.png" alt="Données brutes Netflix" class="cleaning-image">
+            <p data-lang-fr="L'objectif était de préparer ces données pour une analyse exploratoire approfondie afin de mieux comprendre l'évolution du contenu proposé par la plateforme."
+               data-lang-en="The goal was to prepare this data for in-depth exploratory analysis to better understand the evolution of content offered by the platform.">
+               L'objectif était de préparer ces données pour une analyse exploratoire approfondie afin de mieux comprendre l'évolution du contenu proposé par la plateforme.
+            </p>
+            <p data-lang-fr="Dans un premier temps, j'ai analysé la structure des colonnes pour vérifier la cohérence des types de données et identifier les anomalies. J’ai vérifié l'unicité de la clé primaire (show_id) pour m'assurer de l'absence de doublons, puis j'ai vérifié la présence de valeurs manquantes sur l'ensemble du dataset pour m'assurer de la qualité du jeu de données."
+               data-lang-en="Initially, I analyzed the column structure to verify data type consistency and identify anomalies. I checked the uniqueness of the primary key (show_id) to ensure no duplicates were present, then I checked for missing values across the entire dataset to ensure data quality.">
+               Dans un premier temps, j'ai analysé la structure des colonnes pour vérifier la cohérence des types de données et identifier les anomalies. J’ai vérifié l'unicité de la clé primaire (show_id) pour m'assurer de l'absence de doublons, puis j'ai vérifié la présence de valeurs manquantes sur l'ensemble du dataset pour m'assurer de la qualité du jeu de données.
+            </p>
+            <img src="images/clean1.png" alt="Analyse des données" class="cleaning-image">
+            <p data-lang-fr="J’ai ensuite procédé à un nettoyage approfondi pour normaliser le dataset. D’abord, j'ai renommé les colonnes pour les rendre plus explicites (date, category, year), et j'ai converti les mentions 'Not Given' en NULL, ce qui permet d'exclure proprement ces valeurs lors de mes calculs statistiques. Puis, pour isoler ma logique de transformation et préserver l'intégrité de la table source, j'ai encapsulé ces étapes dans une vue dédiée. Cela m'a d’ailleurs permis de convertir les durées en données numériques (en distinguant les minutes des saisons) et de calculer des KPIs pertinents, comme l'âge du contenu."
+               data-lang-en="I then performed thorough cleaning to normalize the dataset. First, I renamed columns for clarity (date, category, year), and converted 'Not Given' mentions to NULL, which allows for clean exclusion during statistical calculations. Then, to isolate my transformation logic and preserve source table integrity, I encapsulated these steps in a dedicated view. This also allowed me to convert durations into numeric data (distinguishing minutes from seasons) and calculate relevant KPIs, such as content age.">
+               J’ai ensuite procédé à un nettoyage approfondi pour normaliser le dataset. D’abord, j'ai renommé les colonnes pour les rendre plus explicites (date, category, year), et j'ai converti les mentions "Not Given" en NULL, ce qui permet d'exclure proprement ces valeurs lors de mes calculs statistiques. Puis, pour isoler ma logique de transformation et préserver l'intégrité de la table source, j'ai encapsulé ces étapes dans une vue dédiée. Cela m'a d’ailleurs permis de convertir les durées en données numériques (en distinguant les minutes des saisons) et de calculer des KPIs pertinents, comme l'âge du contenu.
+            </p>
+            <p data-lang-fr="Enfin, pour faciliter l'analyse par genre, j'ai crée une seconde vue en utilisant la fonction STRING_SPLIT avec CROSS APPLY, ce qui m'a permis de transformer les entrées contenant plusieurs genres en lignes distinctes, rendant le dataset propre et prêt pour la visualisation."
+               data-lang-en="Finally, to facilitate genre analysis, I created a second view using the STRING_SPLIT function with CROSS APPLY, which allowed me to transform entries containing multiple genres into distinct rows, making the dataset clean and ready for visualization.">
+               Enfin, pour faciliter l'analyse par genre, j'ai crée une seconde vue en utilisant la fonction STRING_SPLIT avec CROSS APPLY, ce qui m'a permis de transformer les entrées contenant plusieurs genres en lignes distinctes, rendant le dataset propre et prêt pour la visualisation.
+            </p>
+            <img src="images/cleanfinal.png" alt="Données finales nettoyées" class="cleaning-image">
+        </section>
+
+        <section class="project-intro-text method-section">
+            <h3 class="tool-title" style="display: block;">3. R (RStudio)</h3>
+            <h4 style="font-size: 1.1rem; color: #555; margin-bottom: 10px;">Segmentation client</h4>
+
+            <p data-lang-fr="Pour ce dernier exemple, j'ai utilisé RStudio afin de procéder au nettoyage d’un jeu de données contenant les informations d'achat de 600 clients. L'objectif était d'identifier des profils homogènes (clusters) afin de dégager des caractéristiques communes comme l'âge ou le quotient familial."
+               data-lang-en="For this last example, I used RStudio to clean a dataset containing purchase information for 600 customers. The goal was to identify homogeneous profiles (clusters) to extract common characteristics like age or family quotient.">
+               Pour ce dernier exemple, j'ai utilisé RStudio afin de procéder au nettoyage d’un jeu de données contenant les informations d'achat de 600 clients. L'objectif était d'identifier des profils homogènes (clusters) afin de dégager des caractéristiques communes comme l'âge ou le quotient familial.
+            </p>
+            
+            <p style="margin-bottom: 5px;"><strong><span data-lang-fr="Caractéristiques du dataset :" data-lang-en="Dataset characteristics:">Caractéristiques du dataset :</span></strong></p>
+            <ul class="data-dict">
+                <li>600 instances / 13 variables.</li>
+                <li><span data-lang-fr="Variables clés : Âge, Revenus, Quotient Familial, et variables socio-démographiques." data-lang-en="Key variables: Age, Income, Family Quotient, and socio-demographic variables.">Variables clés : Âge, Revenus, Quotient Familial, et variables socio-démographiques.</span></li>
+                <li><span data-lang-fr="Cible : Variable Produit (Oui/Non)." data-lang-en="Target: Product variable (Yes/No).">Cible : Variable Produit (Oui/Non).</span></li>
+            </ul>
+
+            <p data-lang-fr="J’ai procédé à une préparation rigoureuse des données : j'ai d'abord supprimé la colonne ID via l'opérateur [,-1], celle-ci n'ayant aucune valeur statistique. Ensuite, j'ai converti la variable Enfants en facteur ordonné (ordered=TRUE) pour intégrer la hiérarchie logique des valeurs (0 < 1 < 2 < 3) dans les calculs de distance. Enfin, j'ai validé la structure et la distribution statistique du dataset via les fonctions str() et summary() avant de débuter l'analyse exploratoire."
+               data-lang-en="I performed rigorous data preparation: I first removed the ID column via the [,-1] operator, as it had no statistical value. Then, I converted the Children variable into an ordered factor (ordered=TRUE) to integrate the logical value hierarchy (0 < 1 < 2 < 3) into distance calculations. Finally, I validated the structure and statistical distribution of the dataset using the str() and summary() functions before beginning exploratory analysis.">
+               J’ai procédé à une préparation rigoureuse des données : j'ai d'abord supprimé la colonne ID via l'opérateur [,-1], celle-ci n'ayant aucune valeur statistique. Ensuite, j'ai converti la variable Enfants en facteur ordonné (ordered=TRUE) pour intégrer la hiérarchie logique des valeurs (0 < 1 < 2 < 3) dans les calculs de distance. Enfin, j'ai validé la structure et la distribution statistique du dataset via les fonctions str() et summary() avant de débuter l'analyse exploratoire.
+            </p>
+            
+            <div class="r-images-container">
+                <figure class="r-image-box">
+                    <img src="images/r.png" alt="Données avant nettoyage" class="cleaning-image">
+                    <figcaption data-lang-fr="Données avant nettoyage" data-lang-en="Data before cleaning">Données avant nettoyage</figcaption>
+                </figure>
+                <figure class="r-image-box">
+                    <img src="images/rclean.png" alt="Données après nettoyage" class="cleaning-image">
+                    <figcaption data-lang-fr="Données après nettoyage" data-lang-en="Data after cleaning">Données après nettoyage</figcaption>
+                </figure>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="copyright">
+        <span>© 2026 Favre Emma's Portfolio</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

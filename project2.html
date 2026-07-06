@@ -3,12 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bellabeat Case Study</title>
+    <title>Project 2 - Bellabeat Case Study</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
             background-color: #fff !important;
+        }
+        
+        /* CONFIGURATION DU CONTENEUR PRINCIPAL */
+        body.project-page .main-content {
+            max-width: 100% !important;
+            width: 100% !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            margin: 0 auto !important;
+            display: block !important;
+        }
+
+        /* Centrage des blocs de texte */
+        .project-case-study-title, 
+        .project-intro-text {
+            max-width: 800px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            padding-left: 20px;
+            padding-right: 20px;
+            box-sizing: border-box;
+        }
+
+        .first-section {
+            margin-top: 50px !important; 
+        }
+
+        /* Outils Table */
+        .tools-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0 10px 0;
+            font-size: 0.95rem;
+            text-align: left;
+        }
+        .tools-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .tools-table td:first-child {
+            font-weight: 600;
+            width: 30%;
+            color: #333;
+            letter-spacing: 0.5px;
+        }
+        .tools-table td:last-child {
+            color: #666;
+        }
+
+        /* Images R stylisées et responsives */
+        .project-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            margin: 25px auto;
+            display: block;
+        }
+
+        .project-images-flex {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin: 25px 0;
+        }
+        @media (min-width: 768px) {
+            .project-images-flex {
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+            .project-images-flex .project-image {
+                flex: 1;
+                margin: 0;
+                max-width: 48%;
+            }
+        }
+        
+        /* Centrage axial parfait du Dashboard Tableau */
+        .tableau-section {
+            width: 100% !important;
+            max-width: 1026px !important; 
+            margin: 40px auto !important; 
+            padding: 0 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important; 
+            overflow: hidden !important;
+        }
+        
+        .tableau-container {
+            width: 100% !important;
+            height: 765px !important; 
+            overflow: hidden !important;
+            background: transparent !important;
+            position: relative !important;
+        }
+
+        .tableau-direct-iframe {
+            width: 1140px !important; 
+            height: 850px !important; 
+            border: none !important;
+            display: block !important;
+            margin: 0 auto !important; 
+            transform: scale(0.90) !important; 
+            transform-origin: top center !important; 
         }
     </style>
 </head>
@@ -16,76 +122,129 @@
 
     <div class="sidebar left-sidebar">
         <div class="sidebar-nav">
-            <a href="index.html" class="nav-link">HOME</a>
+            <a href="index.html" class="nav-link" data-lang-fr="ACCUEIL" data-lang-en="HOME">HOME</a>
         </div>
     </div>
 
     <div class="sidebar right-sidebar">
         <div class="sidebar-nav">
-            <a href="contact.html" class="nav-link">CONTACT</a>
-            <a href="about-me.html" class="nav-link">ABOUT ME</a>
+            <a href="contact.html" class="nav-link" data-lang-fr="CONTACT" data-lang-en="CONTACT">CONTACT</a>
+            <a href="about-me.html" class="nav-link" data-lang-fr="À PROPOS" data-lang-en="ABOUT ME">ABOUT ME</a>
         </div>
     </div>
 
     <main class="main-content">
-        <h1 class="project-case-study-title nav-link">Case Study: How Can a Wellness Technology Company Play It Smart?</h1>
+
+        <h1 class="project-case-study-title" 
+            data-lang-fr="Étude de Cas Google – Bellabeat : Analyse des Objets Connectés de Bien-être" 
+            data-lang-en="Google Case Study – Bellabeat: Wellness Smart Device Usage Analysis">
+            Google Case Study – Bellabeat: Wellness Smart Device Usage Analysis
+        </h1>
+
+        <section class="project-intro-text first-section">
+            <h2 class="section-title" data-lang-fr="L'OBJECTIF" data-lang-en="THE OBJECTIVE">L'OBJECTIF</h2>
+            <p data-lang-fr="Cette étude de cas fait partie du certificat professionnel Google Data Analytics. Bellabeat, un fabricant de produits technologiques axés sur la santé des femmes, cherche à exploiter les données de fitness des consommateurs pour débloquer des opportunités de croissance. L'objectif de cette analyse demandée par la cofondatrice Urška Sršen est d'identifier les tendances clés du comportement des utilisateurs d'objets connectés tiers (Fitbit) afin d'aider l'équipe marketing à affiner son positionnement et déployer des stratégies à l'échelle mondiale."
+               data-lang-en="This case study is part of the Google Data Analytics Professional Certificate. Bellabeat, a high-tech manufacturer of health-focused products for women, seeks to leverage consumer fitness data to unlock growth opportunities. The objective of this analysis, requested by cofounder Urška Sršen, is to identify key trends in smart device user behavior from third-party data (Fitbit) to guide the marketing team in refining product positioning and scaling global marketing strategies.">
+                Cette étude de cas fait partie du certificat professionnel Google Data Analytics. Bellabeat, un fabricant de produits technologiques axés sur la santé des femmes, cherche à exploiter les données de fitness des consommateurs pour débloquer des opportunités de croissance. L'objectif de cette analyse demandée par la cofondatrice Urška Sršen est d'identifier les tendances clés du comportement des utilisateurs d'objets connectés tiers (Fitbit) afin d'aider l'équipe marketing à affiner son positionnement et déployer des stratégies à l'échelle mondiale.
+            </p>
+            <div class="report-info-container" style="text-align: center; margin-top: 25px;">
+                <a href="Rapport-Bellabeat.html" target="_blank" class="document-button" data-lang-fr="VOIR LE RAPPORT COMPLET" data-lang-en="VIEW FULL REPORT">VIEW FULL REPORT</a>
+            </div>
+        </section>
 
         <section class="project-intro-text">
-            <h2 class="section-title nav-link">SUMMARY</h2>
-            <p>
-                 This case study is part of the Google Data Analytics Professional Certificate. Bellabeat, a high-tech manufacturer of health-focused products for women, seeks to leverage consumer fitness data to unlock growth opportunities. The objective of this analysis is to identify key trends in user behavior and provide data-driven recommendations to the marketing team, aimed at refining product positioning and scaling global marketing strategies.
+            <h2 class="section-title" data-lang-fr="OUTILS & TECHNOLOGIES" data-lang-en="TOOLS & TECHNOLOGIES">OUTILS & TECHNOLOGIES</h2>
+            <table class="tools-table">
+                <tr>
+                    <td data-lang-fr="Plateformes" data-lang-en="Platforms">Plateformes</td>
+                    <td>RStudio, Tableau Public, Google Sheets / Microsoft Excel (Exploration initiale)</td>
+                </tr>
+                <tr>
+                    <td data-lang-fr="Codes & Langages" data-lang-en="Codes & Languages">Codes & Langages</td>
+                    <td>R (Langage d'analyse statistique)</td>
+                </tr>
+                <tr>
+                    <td data-lang-fr="Librairies & Outils" data-lang-en="Libraries & Tools">Librairies & Outils</td>
+                    <td>Tidyverse (dplyr, ggplot2, tidyr), janitor, patchwork, ggpubr, Analyses de corrélation</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="project-intro-text">
+            <h2 class="section-title" data-lang-fr="LA DATA & LIMITATIONS" data-lang-en="THE DATA & LIMITATIONS">LA DATA & LIMITATIONS</h2>
+            <p data-lang-fr="Pour cette analyse, j'ai utilisé les données publiques 'FitBit Fitness Tracker Data' générées par des répondants via Amazon Mechanical Turk. Le jeu contient deux dossiers contenant jusqu'à 18 fichiers CSV détaillant l'activité quotidienne, les calories, les pas, la fréquence cardiaque et le sommeil. Afin de fiabiliser l'analyse, je me suis concentrée sur le mois le plus complet (avril à mai 2016). Plusieurs limitations clés ont été identifiées : un échantillon restreint (33 utilisateurs pour l'activité, 24 pour le sommeil), un manque de données démographiques (âge, localisation) réduisant la portée des segments, et des écarts de taille d'échantillon entre les fichiers."
+               data-lang-en="For this analysis, I used the public dataset 'FitBit Fitness Tracker Data' generated by respondents on Amazon Mechanical Turk. The dataset contains up to 18 CSV files tracking daily activities, calories, steps, heart rate, and sleep. To secure consistency, I focused on the most complete month (April to May 2016). Several data limitations were raised: small sample size (33 users for activity, 24 for sleep), a total lack of demographic variables (age, location), and sample discrepancies across tracking metrics.">
+                Pour cette analyse, j'ai utilisé les données publiques "FitBit Fitness Tracker Data" générées par des répondants via Amazon Mechanical Turk. Le jeu contient deux dossiers contenant jusqu'à 18 fichiers CSV détaillant l'activité quotidienne, les calories, les pas, la fréquence cardiaque et le sommeil. Afin de fiabiliser l'analyse, je me suis concentrée sur le mois le plus complet (avril à mai 2016). Plusieurs limitations clés ont été identifiées : un échantillon restreint (33 utilisateurs pour l'activité, 24 pour le sommeil), un manque de données démographiques (âge, localisation) réduisant la portée des segments, et des écarts de taille d'échantillon entre les fichiers.
             </p>
-            <div class="report-info-container">
-                <a href="Rapport-Bellabeat.html" target="_blank" class="document-button">VIEW FULL REPORT</a>
-                <div class="tooltip-container">
-                    <i class="fas fa-tools info-icon"></i>
-                    <span class="info-text">Tools used</span>
-                    <span class="tooltip-text">I used R for data cleaning and analysis, and Tableau for visualization.</span>
-                </div>
+        </section>
+
+        <section class="project-intro-text">
+            <h2 class="section-title" data-lang-fr="NETTOYAGE & PRÉPARATION EN R" data-lang-en="DATA CLEANING & PREPARATION IN R">NETTOYAGE & PRÉPARATION EN R</h2>
+            <p data-lang-fr="Après une exploration initiale sur tableur pour analyser la structure large/longue des fichiers, le nettoyage a été orchestré sous R. J'ai d'abord vérifié le nombre d'identifiants uniques (33 pour l'activité, 24 pour le sommeil). J'ai identifié et supprimé 3 doublons stricts présents dans le fichier de sommeil à l'aide de distinct(). Les noms de colonnes ont été uniformisés en minuscules via le package janitor. Enfin, les dates stockées au format texte ont été converties en objets Date appropriés, permettant une fusion (merge) rigoureuse des tables d'activité et de sommeil sur les clés composites 'id' et 'date', créant un jeu de données final consolidé de 410 observations."
+               data-lang-en="Following initial spreadsheet profiling to explore file structures, the preparation pipeline was built in R. I first verified unique IDs (33 for activity, 24 for sleep) and identified and dropped 3 strict duplicates in sleep records using distinct(). Column names were uniformized into lower case using the janitor package. Finally, text-formatted dates were converted into proper Date objects, ensuring a seamless merge of activity and sleep data frames based on the composite keys 'id' and 'date', resulting in a unified clean dataset of 410 observations.">
+                Après une exploration initiale sur tableur pour analyser la structure large/longue des fichiers, le nettoyage a été orchestré sous R. J'ai d'abord vérifié le nombre d'identifiants uniques (33 pour l'activité, 24 pour le sommeil). J'ai identifié et supprimé 3 doublons stricts présents dans le fichier de sommeil à l'aide de distinct(). Les noms de colonnes ont été uniformisés en minuscules via le package janitor. Enfin, les dates stockées au format texte ont été converties en objets Date appropriés, permettant une fusion (merge) rigoureuse des tables d'activité et de sommeil sur les clés composites "id" et "date", créant un jeu de données final consolidé de 410 observations.
+            </p>
+        </section>
+
+        <section class="project-intro-text">
+            <h2 class="section-title" data-lang-fr="PROFILAGE & DIRECTIVES DE L'OMS" data-lang-en="USER PROFILING & WHO GUIDELINES">PROFILAGE & DIRECTIVES DE L'OMS</h2>
+            <p data-lang-fr="À l'aide d'agrégations conditionnelles sous R, j'ai segmenté les utilisateurs selon leur niveau d'activité et leur sommeil. Les résultats révèlent que 47 % des utilisateurs ont un profil sédentaire et 51 % affichent un volume de pas insuffisant ('Low Step'). L'analyse du sommeil montre une statistique alarmante : 33 % des utilisateurs dorment moins de 6 heures par nuit, manquant l'objectif de base. En confrontant l'activité mensuelle moyenne aux recommandations de l'OMS (150 à 300 minutes d'activité modérée par semaine), le constat is clair : les profils actifs légers et même très actifs se situent globalement bien en dessous des seuils recommandés pour préserver leur santé."
+               data-lang-en="Using conditional mutations in R, I segmented users based on physical activity and sleep habits. Profiling shows that 47% of users possess a sedentary profile, while 51% demonstrate an insufficient step volume ('Low Step'). Sleep analysis unveils an alarming trend: 33% of users sleep less than 6 hours per night, missing standard benchmarks. By testing monthly activity averages against WHO guidelines (150-300 mins of moderate physical activity per week), the conclusion is evident: lightly active and even very active profiles routinely fall below recommended health boundaries.">
+                À l'aide d'agrégations conditionnelles sous R, j'ai segmenté les utilisateurs selon leur niveau d'activité et leur sommeil. Les résultats révèlent que 47 % des utilisateurs ont un profil sédentaire et 51 % affichent un volume de pas insuffisant ("Low Step"). L'analyse du sommeil montre une statistique alarmante : 33 % des utilisateurs dorment moins de 6 heures par nuit, manquant l'objectif de base. En confrontant l'activité mensuelle moyenne aux recommandations de l'OMS (150 à 300 minutes d'activité modérée par semaine), le constat est clair : les profils actifs légers et même très actifs se situent globalement bien en dessous des seuils recommandés pour préserver leur santé.
+            </p>
+            <div class="project-images-flex">
+                <img src="images/activity.png" alt="Activity and Step Distribution Plots" class="project-image">
+                <img src="images/sleep.png" alt="Sleep Classification Chart" class="project-image">
+            </div>
+        </section>
+
+        <section class="project-intro-text">
+            <h2 class="section-title" data-lang-fr="ANALYSE HEBDOMADAIRE & CORRÉLATIONS" data-lang-en="WEEKDAY ANALYSIS & CORRELATIONS">ANALYSE HEBDOMADAIRE & CORRÉLATIONS</h2>
+            <p data-lang-fr="En analysant les métriques selon les jours de la semaine, on remarque que le seuil recommandé de 10 000 pas n'est jamais atteint en moyenne, bien que le samedi s'en rapproche le plus, tandis que le dimanche marque le point le plus bas en activité. L'étude des graphiques de corrélation (nuages de points avec courbes de tendance smooth) révèle des enseignements notables : une corrélation négative inattendue apparaît entre le nombre de pas et les minutes de sommeil (les utilisateurs très actifs dorment légèrement moins). À l'inverse, on valide une corrélation positive linéaire forte et attendue entre le volume de pas/minutes d'activité intense et la dépense en calories."
+               data-lang-en="By checking tracking metrics against days of the week, we notice that the recommended 10,000-step benchmark is never achieved on average, although Saturdays come closest, while Sundays reflect the weekly low in activity. Scatter plots with smooth trend lines unveil key operational findings: an unexpected negative correlation appears between steps taken and sleep minutes (more active users tend to sleep slightly less). On the other hand, a strong and expected linear positive correlation is validated between steps/active minutes and total calorie expenditure.">
+                En analysant les métriques selon les jours de la semaine, on remarque que le seuil recommandé de 10 000 pas n'est jamais atteint en moyenne, bien que le samedi s'en rapproche le plus, tandis que le dimanche marque le point le plus bas en activité. L'étude des graphiques de corrélation (nuages de points avec courbes de tendance smooth) révèle des enseignements notables : une corrélation négative inattendue apparaît entre le nombre de pas et les minutes de sommeil (les utilisateurs très actifs dorment légèrement moins). À l'inverse, on valide une corrélation positive linéaire forte et attendue entre le volume de pas/minutes d'activité intense et la dépense en calories.
+            </p>
+            <div class="project-images-flex">
+                <img src="images/stepsleep.png" alt="Steps and Sleep by Weekday Chart" class="project-image">
+                <img src="images/corr.png" alt="Correlation Scatter Plots" class="project-image">
             </div>
         </section>
 
         <section class="tableau-section">
-            <h2 class="section-title"> Dashboard</h2>
-            <p class="dashboard-text small-text">Created with Tableau, this dashboard is fully interactive. You can explore the data and discover my key recommendations.</p>
+            <h2 class="section-title" style="text-align: center; margin-bottom: 20px;" data-lang-fr="TABLEAU DE BORD INTERACTIF" data-lang-en="INTERACTIVE DASHBOARD">TABLEAU DE BORD INTERACTIF</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 30px auto;"
+               data-lang-fr="Créé avec Tableau, ce tableau de bord est entièrement interactif. Vous pouvez explorer dynamiquement les données, croiser les volumes de pas et de sommeil par utilisateur et découvrir mes principales recommandations de visualisation." 
+               data-lang-en="Created with Tableau, this dashboard is fully interactive. You can dynamically explore the data, cross-reference step and sleep volumes by user, and discover my primary visualization insights.">
+                Créé avec Tableau, ce tableau de bord est entièrement interactif. Vous pouvez explorer dynamiquement les données, croiser les volumes de pas et de sommeil par utilisateur et découvrir mes principales recommandations de visualisation.
+            </p>
             <div class="tableau-container">
-                <div class='tableauPlaceholder' id='viz1756189593078' style='position: relative'>
-                    <noscript>
-                        <a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Be&#47;BellabeatDashboardGoogleCertificateCapsuleProject&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a>
-                    </noscript>
-                    <object class='tableauViz' style='display:none;'>
-                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
-                        <param name='embed_code_version' value='3' /> 
-                        <param name='site_root' value='' />
-                        <param name='name' value='BellabeatDashboardGoogleCertificateCapsuleProject&#47;Dashboard1' />
-                        <param name='tabs' value='no' />
-                        <param name='toolbar' value='yes' />
-                        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Be&#47;BellabeatDashboardGoogleCertificateCapsuleProject&#47;Dashboard1&#47;1.png' /> 
-                        <param name='animate_transition' value='yes' />
-                        <param name='display_static_image' value='yes' />
-                        <param name='display_spinner' value='yes' />
-                        <param name='display_overlay' value='yes' />
-                        <param name='display_count' value='yes' />
-                        <param name='language' value='fr-FR' />
-                    </object>
-                </div>
-                <script type='text/javascript'>
-                    var divElement = document.getElementById('viz1756189593078');
-                    var vizElement = divElement.getElementsByTagName('object')[0];
-                    vizElement.style.width = '1000px';
-                    vizElement.style.height = '827px';
-                    var scriptElement = document.createElement('script');
-                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
-                </script>
+                <iframe src="https://public.tableau.com/views/BellabeatDashboardGoogleCertificateCapsuleProject/Dashboard1?:showVizHome=no&:embed=true" class="tableau-direct-iframe"></iframe>
             </div>
         </section>
 
+        <!-- DIAGNOSTIC BUSINESS & RECOMMANDATIONS -->
+        <section class="project-intro-text">
+            <h2 class="section-title" data-lang-fr="DIAGNOSTIC BUSINESS & RECOMMANDATIONS" data-lang-en="BUSINESS INSIGHTS & STRATEGY">DIAGNOSTIC BUSINESS & RECOMMANDATIONS</h2>
+            
+            <p data-lang-fr="Ces tendances offrent des opportunités marketing concrètes pour Bellabeat."
+               data-lang-en="These trends provide key marketing opportunities for Bellabeat."></p>
+            
+            <p data-lang-fr="(1) Introduire des notifications intelligentes ('Smart Reminders') personnalisées le dimanche pour relancer l'activité lors du creux hebdomadaire constaté."
+               data-lang-en="(1) Introduce custom 'Smart Reminders' on Sundays to nudge users and fix the weekly activity drop."></p>
+            
+            <p data-lang-fr="(2) Capitaliser sur le fort déficit de sommeil (33 %) en enrichissant l'application Bellabeat de fonctions de régulation circadienne et en prévenant l'utilisateur via des alertes si ses journées intensives impactent son temps de repos."
+               data-lang-en="(2) Capitalize on the major sleep deficit (33% of users) by delivering value-added circadian rhythm tools within Bellabeat's application, alerting users if hyper-active days hurt their rest windows."></p>
+            
+            <p data-lang-fr="(3) Développer un système de gamification basé sur les paliers de l'OMS pour motiver le segment majeur des utilisateurs 'Actifs légers' à intensifier leurs habitudes, renforçant la fidélisation autour d'un écosystème axé sur la santé globale des femmes."
+               data-lang-en="(3) Build gamification challenges scaled against WHO thresholds to incentivize the massive 'Lightly Active' cohort, driving retention and brand loyalty around a connected ecosystem tailored for women's wellness."></p>
+        </section>
+        
     </main>
 
     <div class="copyright">
-        <span>© 2025 Favre Emma's Portfolio</span>
+        <span>© 2026 Favre Emma's Portfolio</span>
     </div>
 
+    <script src="script.js"></script>
 </body>
 </html>
