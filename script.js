@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 📂 GESTION GÉNÉRALE DES MODALES
     // ==========================================
     
-    // Fonction pour fermer TOUTES les modales existantes sur la page
+    // Fonction pour fermer TOUTES les modales existantes
     const closeAllModals = () => {
         document.querySelectorAll('.modal').forEach(modal => {
             modal.style.display = 'none';
@@ -47,6 +47,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fonction pour ouvrir une modale spécifique
     const openModal = (modalId) => {
         const modalElement = document.getElementById(modalId);
+        
+        // --- LOGIQUE DYNAMIQUE POUR LE CV ---
+        if (modalId === 'cv-modal' && modalElement) {
+            const cvEmbed = modalElement.querySelector('embed');
+            if (cvEmbed) {
+                const currentLang = document.documentElement.lang || 'fr';
+                cvEmbed.src = (currentLang === 'en') ? 'assets/CV_en_anglais.pdf' : 'assets/CV_Favre_Emma.pdf';
+            }
+        }
+
         if (modalElement) {
             closeAllModals();
             modalElement.style.display = 'block';
@@ -59,7 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
         { btn: 'toggle-other-skills', modal: 'other-skills-modal' },
         { btn: 'toggle-soft-skills', modal: 'soft-skills-modal' },
         { btn: 'toggle-cv', modal: 'cv-modal' },
-        { btn: 'toggle-cover-letter', modal: 'cover-letter-modal' },
         { btn: 'toggle-certificates', modal: 'certificates-modal' },
         { btn: 'toggle-experiences', modal: 'experiences-modal' }
     ];

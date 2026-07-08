@@ -38,7 +38,7 @@
                 box-sizing: border-box;
             }
 
-            /* Taille spécifique pour l'affichage des PDF (CV et Lettre) */
+            /* Taille spécifique pour l'affichage des PDF (CV) */
             .large-modal {
                 max-width: 900px;
                 height: 80vh;
@@ -211,7 +211,6 @@
             
             <div class="document-buttons-container">
                 <div class="document-button" id="toggle-cv" data-lang-fr="VOIR MON CV" data-lang-en="VIEW MY CV">VIEW MY CV</div>
-                <div class="document-button" id="toggle-cover-letter" data-lang-fr="VOIR MA LETTRE DE MOTIVATION" data-lang-en="VIEW MY COVER LETTER">VIEW MY COVER LETTER</div>
             </div>
 
             <div class="document-buttons-container" style="margin-top: 20px;">
@@ -225,17 +224,10 @@
         <span>© 2026 Favre Emma's Portfolio</span>
     </div>
 
-    <div id="cv-modal" class="modal">
+<div id="cv-modal" class="modal">
         <div class="modal-content large-modal">
             <span class="close-button">&times;</span>
-            <embed src="assets/CV_Favre_Emma.pdf" type="application/pdf" width="100%" height="100%">
-        </div>
-    </div>
-
-    <div id="cover-letter-modal" class="modal">
-        <div class="modal-content large-modal">
-            <span class="close-button">&times;</span>
-            <embed src="assets/cover_letter.pdf" type="application/pdf" width="100%" height="100%">
+            <embed type="application/pdf" width="100%" height="100%">
         </div>
     </div>
 
